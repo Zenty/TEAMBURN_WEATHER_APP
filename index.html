@@ -34,7 +34,11 @@
       </section>
       <!-- Section 2 -->
       <section class="section-2">
-
+        <h1>Enter coordinates here</h1> 58.43313416334136, 15.461482140929085
+        <input type="text" value="" id="latitude" placeholder="latitude">
+        <input type="text" value="" id="longitude" placeholder="longitude">
+        <p id="tryWeather">--</p>
+        <button onclick="tryAPI(latitude.value, longitude.value)">Klicka mig</button>
       </section>
       <!-- Section 3 -->
       <section class="section-3">
@@ -50,6 +54,6 @@
 
     </footer>
     <!-- Scripts -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
   </body>
 </html>
