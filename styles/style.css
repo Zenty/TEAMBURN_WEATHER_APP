@@ -1,0 +1,73 @@
+/* ********************* */
+/*    General Styling    */
+/* ********************* */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ************ */
+/*    Header    */
+/* ************ */
+
+header {
+  width: 100%;
+}
+
+/* ********** */
+/*    Main    */
+/* ********** */
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main section {
+  width: 100%;
+  min-height: 300px;
+}
+
+/* Frontpage */
+main section.frontpage {
+  background-color: lightgrey;
+}
+
+/* Section 1 */
+main section.section-1 {
+  background-color: lightgrey;
+}
+
+/* Section 2 */
+main section.section-2 {
+  background-color: lightgrey;
+}
+
+/* Section 3 */
+main section.section-3 {
+  background-color: lightgrey;
+}
+
+/* Section 4 */
+main section.section-4 {
+  background-color: lightgrey;
+}
+
+/* ************ */
+/*    Footer    */
+/* ************ */
+
+footer {
+  width: 100%;
+  min-height: 300px;
+}

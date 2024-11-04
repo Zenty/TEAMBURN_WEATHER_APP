@@ -1,0 +1,18 @@
+/* ******************* */
+/*    Media Queries    */
+/* ******************* */
+
+/* Desktop */
+@media (min-width: 1200px) {
+
+}
+
+/* Medium Sized Devices */
+@media (max-width: 1200px) and (min-width: 601px) {
+
+}
+
+/* Phones */
+@media (max-width: 600px) {
+
+}

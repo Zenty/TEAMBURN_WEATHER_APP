@@ -1,0 +1,31 @@
+/* ******************** */
+/*    CSS Properties    */
+/* ******************** */
+
+:root {
+  /* Light Mode */
+  --light-mode-heading-color: #000;
+  --light-mode-text-color: #000;
+
+  /* Dark Mode */
+  --dark-mode-heading-color: #fff;
+  --dark-mode-text-color: #fff;
+}
+
+
+/* **************** */
+/*    Typography    */
+/* **************** */
+
+/* General */
+body { font-family: monospace; }
+body.light-mode { color: var(--light-mode-text-color); }
+body.dark-mode { color: var(--dark-mode-text-color); }
+
+/* Header */
+/* Main - Startpage */
+/* Main - Section 1 */
+/* Main - Section 2 */
+/* Main - Section 3 */
+/* Main - Section 4 */
+/* Footer */
