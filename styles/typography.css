@@ -2,25 +2,30 @@
 /*    CSS Properties    */
 /* ******************** */
 
-:root {
-  /* Light Mode */
-  --light-mode-heading-color: #000;
-  --light-mode-text-color: #000;
-
-  /* Dark Mode */
-  --dark-mode-heading-color: #fff;
-  --dark-mode-text-color: #fff;
+:root[data-theme="light"] {
+  color-scheme: light;
+  --text: white;
+  --background: linear-gradient(to bottom, #000099 0%, #3399ff 50%, #99ccff 100%);
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --text: black;
+  --background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+}
 
 /* **************** */
 /*    Typography    */
 /* **************** */
 
 /* General */
-body { font-family: monospace; }
-body.light-mode { color: var(--light-mode-text-color); }
-body.dark-mode { color: var(--dark-mode-text-color); }
+
+
 
 /* Header */
 /* Main - Startpage */

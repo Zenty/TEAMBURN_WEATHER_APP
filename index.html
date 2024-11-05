@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Data-->
-    <meta charset="utf-8">
-    <meta name="description" content="Our Weather App">
-    <meta name="keywords" content="Weather, Team Burn">
-    <meta name="author" content="Team Burn">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles/typography.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/media-queries.css">
+<head>
+  <!-- Meta Data-->
+  <meta charset="utf-8">
+  <meta name="description" content="Our Weather App">
+  <meta name="keywords" content="Weather, Team Burn">
+  <meta name="author" content="Team Burn">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tab Content -->
-    <link rel="icon" type="image/x-icon" href="/">
-    <title>Weather App</title>
-  </head>
-  <body class="light-mode"> <!-- Toggle between light-mode & dark-mode class -->
-    <!-- Header -->
-    <header>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/typography.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/media-queries.css">
 
-    </header>
-    <!-- Main Content -->
-    <main>
-      <!-- Frontpage -->
-      <section class="frontpage">
+  <!-- Tab Content -->
+  <link rel="icon" type="image/x-icon" href="/">
+  <title>Weather App</title>
+</head>
 
-      </section>
-      <!-- Section 1 -->
-      <section class="section-1">
+<body class="light">
 
-      </section>
-      <!-- Section 2 -->
-      <section class="section-2">
-        <h1>Enter coordinates here</h1> 58.43313416334136, 15.461482140929085
-        <input type="text" value="" id="latitude" placeholder="latitude">
-        <input type="text" value="" id="longitude" placeholder="longitude">
-        <p id="tryWeather">--</p>
-        <button onclick="tryAPI(latitude.value, longitude.value)">Klicka mig</button>
-      </section>
-      <!-- Section 3 -->
-      <section class="section-3">
+  <!-- Toggle between light-mode & dark-mode class -->
+  <!-- Header -->
+  <header>
 
-      </section>
-      <!-- Section 4 -->
-      <section class="section-4">
+  </header>
+  <!-- Main Content -->
+  <main>
+    <!-- Frontpage -->
+    <section class="frontpage">
 
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer>
+    </section>
+    <!-- Section 1 -->
+    <section class="section-1">
 
-    </footer>
-    <!-- Scripts -->
-    <script src="scripts/main.js" defer></script>
-  </body>
+    </section>
+    <!-- Section 2 -->
+    <section class="section-2">
+      <h1>Enter coordinates here</h1> 58.43313416334136, 15.461482140929085
+      <input type="text" value="" id="latitude" placeholder="latitude">
+      <input type="text" value="" id="longitude" placeholder="longitude">
+      <p id="tryWeather">--</p>
+      <button onclick="tryAPI(latitude.value, longitude.value)">Klicka mig</button>
+    </section>
+    <!-- Section 3 -->
+    <section class="section-3">
+
+    </section>
+    <!-- Section 4 -->
+    <section class="section-4">
+
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <span id="theme"></span><button id="theme-toggle">Change theme</button>
+
+  </footer>
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/theme.js" defer></script>
+</body>
+
 </html>
