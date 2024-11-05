@@ -5,13 +5,13 @@
 :root[data-theme="light"] {
   color-scheme: light;
   --text: white;
-  --background: linear-gradient(to bottom, #000099 0%, #3399ff 50%, #99ccff 100%);
+  --background: linear-gradient(to left,#99ccff  0%, #3399ff 50%, #000099 100%);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
   --text: black;
-  --background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
+  --background: linear-gradient(to right, #ff3300 0%,#ff0000 50%, #800000 100%);
 }
 
 body {

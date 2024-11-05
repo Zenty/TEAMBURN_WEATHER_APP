@@ -41,35 +41,40 @@ main section {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  border: 1px transparent;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
 }
 
 /* Frontpage */
 main section.frontpage {
-  background-color: rgb(44, 44, 44);
+  background-color: rgba(253, 253, 253, 0.336);
   min-height: 100vh;
 }
 
 /* Section 1 */
 main section.section-1 {
-  background-color: rgb(234, 234, 234);
+  background-color: rgba(253, 253, 253, 0.336);
   min-height: 100vh;
 }
 
 /* Section 2 */
 main section.section-2 {
-  background-color: lightgrey;
+  background-color: rgba(253, 253, 253, 0.336);
   min-height: 200px;
 }
 
 /* Section 3 */
 main section.section-3 {
-  background-color: rgb(180, 180, 180);
+  background-color: rgba(253, 253, 253, 0.336);
   min-height: 50vh;
 }
 
 /* Section 4 */
 main section.section-4 {
-  background-color: rgb(131, 131, 131);
+  background-color: rgba(253, 253, 253, 0.336);
   min-height: 50vh;
 }
 
