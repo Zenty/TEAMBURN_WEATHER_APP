@@ -58,6 +58,7 @@ main section.section-1 {
 /* Section 2 */
 main section.section-2 {
   background-color: lightgrey;
+  min-height: 200px;
 }
 
 /* Section 3 */
@@ -78,5 +79,9 @@ main section.section-4 {
 
 footer {
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
