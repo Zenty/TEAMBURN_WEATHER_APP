@@ -22,6 +22,8 @@ body { font-family: monospace; }
 body.light-mode { color: var(--light-mode-text-color); }
 body.dark-mode { color: var(--dark-mode-text-color); }
 
+h1, h2, h3 { width: 100%; text-align: center; padding-bottom: 20px; }
+
 /* Header */
 /* Main - Startpage */
 /* Main - Section 1 */
