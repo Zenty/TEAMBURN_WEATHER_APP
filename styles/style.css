@@ -9,7 +9,7 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 
   display: flex;
@@ -36,31 +36,41 @@ main {
 main section {
   width: 100%;
   min-height: 300px;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 /* Frontpage */
 main section.frontpage {
-  background-color: lightgrey;
+  background-color: rgb(44, 44, 44);
+  min-height: 100vh;
 }
 
 /* Section 1 */
 main section.section-1 {
-  background-color: lightgrey;
+  background-color: rgb(234, 234, 234);
+  min-height: 100vh;
 }
 
 /* Section 2 */
 main section.section-2 {
   background-color: lightgrey;
+  min-height: 200px;
 }
 
 /* Section 3 */
 main section.section-3 {
-  background-color: lightgrey;
+  background-color: rgb(180, 180, 180);
+  min-height: 50vh;
 }
 
 /* Section 4 */
 main section.section-4 {
-  background-color: lightgrey;
+  background-color: rgb(131, 131, 131);
+  min-height: 50vh;
 }
 
 /* ************ */
@@ -69,5 +79,9 @@ main section.section-4 {
 
 footer {
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
