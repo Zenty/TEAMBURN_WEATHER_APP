@@ -2,16 +2,16 @@
 /*    CSS Properties    */
 /* ******************** */
 
-:root[data-theme="light"] {
+:root[data-theme="cold"] {
   color-scheme: light;
   --text: white;
-  --background: linear-gradient(to left,#99ccff  0%, #3399ff 50%, #000099 100%);
+  --background: linear-gradient(to left, #99ccff 0%, #3399ff 50%, #000099 100%);
 }
 
-:root[data-theme="dark"] {
+:root[data-theme="warm"] {
   color-scheme: dark;
   --text: black;
-  --background: linear-gradient(to right, #ff3300 0%,#ff0000 50%, #800000 100%);
+  --background: linear-gradient(to right, #ff3300 0%, #ff0000 50%, #800000 100%);
 }
 
 body {
@@ -27,7 +27,13 @@ body {
 
 
 
-h1, h2, h3 { width: 100%; text-align: center; padding-bottom: 20px; }
+h1,
+h2,
+h3 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
 
 /* Header */
 /* Main - Startpage */

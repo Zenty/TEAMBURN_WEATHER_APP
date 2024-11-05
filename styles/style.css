@@ -34,7 +34,6 @@ main {
 }
 
 main section {
-  width: 100%;
   min-height: 300px;
   padding: 50px;
   display: flex;
