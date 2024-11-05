@@ -33,18 +33,62 @@
     <!-- Section 1 -->
     <section class="section-1">
 
+      <div class="section_one_container">
+        <h2>Compare Sweden to Rwanda</h2>
+        <div class="section_one_left">
+          <!-- <form> -->
+            <label for="sweden_cities">Choose a city in Sweden</label>
+            <br>
+            <select id="sweden_cities">
+              <option value="stockholm">Stockholm</option>
+              <option value="gothenburg">Gothenburg</option>
+              <option value="malmö">Malmö</option>
+            </select>
+            <input type="submit" value="Enter"><button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button>
+          <!-- </form> -->
+          <h3>The weather here is:</h3>
+          <div id="sweden_city_weather">--</div>
+          <div>The temperature is:<div id="sweden_city_temperature">--</div>°C</div>
+          <div>The sun rises at:<div id="sweden_city_sunrise">--</div></div>
+          <div>The sun sets at:<div id="sweden_city_sunset">--</div></div>
+        </div>
+        <div class="section_one_right">
+          <form action="">
+            <label for="rwanda_cities">Choosea a city in Rwanda</label>
+            <br>
+            <select id="rwanda_cities">
+              <option value="kigali">Kigali</option>
+              <option value="gisenyi">Gisenyi</option>
+              <option value="ruhengeri">Ruhengeri</option>
+            </select>
+            <input type="submit" value="Enter">
+          </form>
+          <h3>The weather here is:</h3>
+          <div id="rwanda_city_weather">--</div>
+          <div>The temperature is:<div id="rwanda_city_temperature">--</div>°C</div>
+          <div>The sun rises at:<div id="rwanda_city_sunrise">--</div></div>
+          <div>The sun sets at:<div id="rwanda_city_sunset">--</div></div>
+        </div>
+      </div>
     </section>
     <!-- Section 2 -->
     <section class="section-2">
-      <h1>Enter coordinates here</h1> 58.43313416334136, 15.461482140929085
+      <h1>Enter coordinates here to check the weather:</h1>
       <input type="text" value="" id="latitude" placeholder="latitude">
       <input type="text" value="" id="longitude" placeholder="longitude">
-      <p id="tryWeather">--</p>
-      <button onclick="tryAPI(latitude.value, longitude.value)">Klicka mig</button>
+      <br>
+      <button onclick="chosenCityWeather(latitude.value, longitude.value)">Search for coordinates</button>
     </section>
     <!-- Section 3 -->
     <section class="section-3">
-
+      <h3>The weather of your chosen coordinates are:</h3>
+          <div id="chosen_city_weather">--</div> newWeather.weather[0].description
+          <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div> newWeather.main.temp
+          <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div></div> newWeather.main.feels_like
+          <div>Minimum Temperature for the day is:<div id="chosen_city_min_temperature">--</div>C°</div> newWeather.main.temp_min
+          <div>Maximum Temperature for the day is:<div id="chosen_city_max_temperature">--</div>C°</div>newWeather.main.temp_max
+          <div>The sun rises at:<div id="chosen_city_sunrise">--</div></div> newWeather.sys.sunrise
+          <div>The sun sets at:<div id="chosen_city_sunset">--</div></div> newWeather.sys.sunset
     </section>
     <!-- Section 4 -->
     <section class="section-4">
