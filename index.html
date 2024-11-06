@@ -34,8 +34,8 @@
 
       <div class="section_one_container">
         <h2>Compare Sweden to Rwanda</h2>
-        <div class="section_one_left">
-          <!-- <form> -->
+        <div class="section_one_left"> 
+        <form action="preventdefault()">
             <label for="sweden_cities">Choose a city in Sweden</label>
             <br>
             <select id="sweden_cities">
@@ -44,7 +44,7 @@
               <option value="malmö">Malmö</option>
             </select>
             <input type="submit" value="Enter"><button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button>
-          <!-- </form> -->
+          </form>
           <h3>The weather here is:</h3>
           <div id="sweden_city_weather">--</div>
           <div>The temperature is:<div id="sweden_city_temperature">--</div>°C</div>
