@@ -86,6 +86,7 @@ main section {
 main section#frontpage {
   background-color: rgba(253, 253, 253, 0.336);
   min-height: 100vh;
+  margin:0;
 }
 
 /* Section 1 */
