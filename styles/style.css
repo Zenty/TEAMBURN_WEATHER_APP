@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -25,7 +29,35 @@ a {
 /* ************ */
 
 header {
-  width: 100%;
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+}
+
+header nav {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 25px;
+}
+
+header nav.show {
+  display: flex;
+}
+
+header nav ul {
+  min-width: 150px;
+}
+
+header nav ul li {
+  list-style-type: circle;
+}
+
+header nav ul li.active {
+  list-style-type: disc;
+  transition: 0.3s;
 }
 
 /* ********** */
@@ -40,6 +72,7 @@ main {
 main section {
   min-height: 300px;
   padding: 50px;
+  padding-left: 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -50,33 +83,33 @@ main section {
 }
 
 /* Frontpage */
-main section.frontpage {
+main section#frontpage {
   background-color: rgba(253, 253, 253, 0.336);
   min-height: 100vh;
 }
 
 /* Section 1 */
-main section.section-1 {
+main section#section-1 {
   background-color: rgba(253, 253, 253, 0.336);
   min-height: 100vh;
 }
 
 /* Section 2 */
-main section.section-2 {
+main section#section-2 {
   background-color: rgba(253, 253, 253, 0.336);
   min-height: 200px;
 }
 
 /* Section 3 */
-main section.section-3 {
+main section#section-3 {
   background-color: rgba(253, 253, 253, 0.336);
-  min-height: 50vh;
+  min-height: 75vh;
 }
 
 /* Section 4 */
-main section.section-4 {
+main section#section-4 {
   background-color: rgba(253, 253, 253, 0.336);
-  min-height: 50vh;
+  min-height: 75vh;
 }
 
 /* ************ */
@@ -87,6 +120,7 @@ footer {
   width: 100%;
   min-height: 200px;
   padding: 50px;
+  padding-left: 300px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
