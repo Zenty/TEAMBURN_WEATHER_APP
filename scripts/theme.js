@@ -1,5 +1,5 @@
 function getTheme() {
-    return localStorage.getItem('theme') || 'light';
+    return localStorage.getItem('theme') || 'cold';
 }
 function saveTheme(theme) {
     localStorage.setItem('theme', theme);
@@ -11,10 +11,10 @@ function applyTheme(theme) {
 
 
 function rotateTheme(theme) {
-    if (theme === 'light') {
-        return 'dark'
+    if (theme === 'cold') {
+        return 'warm'
     }
-    return 'light';
+    return 'cold';
 }
 
 const themeDisplay = document.getElementById('theme');

@@ -2,22 +2,31 @@
 /*    CSS Properties    */
 /* ******************** */
 
-:root[data-theme="light"] {
+:root[data-theme="cold"] {
   color-scheme: light;
   --text: white;
-  --background: linear-gradient(to bottom, #000099 0%, #3399ff 50%, #99ccff 100%);
+  --background: linear-gradient(to left, #99ccff93 0%, #3399ff9d 50%, #000099a9 100%);
+
 }
 
-:root[data-theme="dark"] {
+:root[data-theme="warm"] {
   color-scheme: dark;
   --text: black;
-  --background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
+  --background: linear-gradient(to right, #ff3300a2 0%, #ff0000a2 50%, #8000008f 100%);
+  --border-radius: 10%;
 }
 
 body {
   color: var(--text);
   background: var(--background);
+  transition-property: var(--background);
+  transition-duration: 1.5s;
   font-family: 'Open Sans', sans-serif;
+}
+
+main section {
+  border-radius: var(--border-radius);
+  
 }
 
 /* **************** */
@@ -28,7 +37,13 @@ body {
 
 
 
-h1, h2, h3 { width: 100%; text-align: center; padding-bottom: 20px; }
+h1,
+h2,
+h3 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
 
 /* Header */
 header nav ul li a { display: inline-block; font-size: 18px; color: white; padding: 10px; text-decoration: none; transition: 0.2s ease-in-out; text-shadow: 0px 0px 5px black; }
