@@ -22,7 +22,16 @@
 <body class="cold"> <!-- Toggle between cold-mode & warm-mode class -->
   <!-- Header -->
   <header>
-
+    <a id="hamburger" href="#" onclick="return false;">☰</a>
+    <nav>
+      <ul class="main-menu">
+        <li class="frontpage active"><a href="#frontpage">Frontpage</a></li>
+        <li class="section-1"><a href="#section-1">Section-1</a></li>
+        <li class="section-2"><a href="#section-2">Section-2</a></li>
+        <li class="section-3"><a href="#section-3">Section-3</a></li>
+        <li class="section-4"><a href="#section-4">Section-4</a></li>
+      </ul>
+    </nav>
   </header>
   <!-- Main Content -->
   <main>
@@ -35,18 +44,7 @@
 
       <div class="section_one_container">
         <h2>Compare Sweden to Rwanda</h2>
-        <div class="section_one_left">
-          <!-- <form> -->
-          <label for="sweden_cities">Choose a city in Sweden</label>
-          <br>
-          <select id="sweden_cities">
-            <option value="stockholm">Stockholm</option>
-            <option value="gothenburg">Gothenburg</option>
-            <option value="malmö">Malmö</option>
-          </select>
-          <input type="submit" value="Enter"><button
-            onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button>
-          <!-- </form> -->
+        
         <div class="section_one_left"> 
         <form action="#sweden_cities">
             <label for="sweden_cities">Choose a city in Sweden</label>
@@ -110,25 +108,7 @@
 
     </section>
   </main>
-  <!-- Footer -->
-  <footer>
-    <div class="footer_container">
-      <div class="footer_links">
-        <div class="footer_link-wrapper">
-          <a href="/" id="footer_logo"><i class="/"></i>Weather app</a>
-        </div>
-        <p class="website_rights">© </p>
-      </div>
-      <span id="theme"></span><button id="theme-toggle">Change theme</button>
-    </div>
-  </footer>
-  <!-- Scripts -->
-  <script src="scripts/main.js" defer></script>
-  <script src="scripts/theme.js" defer></script>
-</body>
-
-    </section>
-  </main>
+  
   <!-- Footer -->
   <footer>
     <div class="footer_container">
