@@ -5,18 +5,24 @@
 :root[data-theme="cold"] {
   color-scheme: light;
   --text: white;
-  --background: linear-gradient(to left, #99ccff 0%, #3399ff 50%, #000099 100%);
+  --background: linear-gradient(to left, #99ccff93 0%, #3399ff9d 50%, #000099a9 100%);
+
 }
 
 :root[data-theme="warm"] {
   color-scheme: dark;
   --text: black;
-  --background: linear-gradient(to right, #ff3300 0%, #ff0000 50%, #800000 100%);
+  --background: linear-gradient(to right, #ff3300a2 0%, #ff0000a2 50%, #8000008f 100%);
+  --border-radius: 10%;
 }
 
 body {
   color: var(--text);
   background: var(--background);
+}
+
+main section {
+  border-radius: var(--border-radius);
 }
 
 /* **************** */
