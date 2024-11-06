@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Meta Data-->
   <meta charset="utf-8">
@@ -44,9 +45,9 @@
 
       <div class="section_one_container">
         <h2>Compare Sweden to Rwanda</h2>
-        
-        <div class="section_one_left"> 
-        <form action="#sweden_cities">
+
+        <div class="section_one_left">
+          <form action="#sweden_cities">
             <label for="sweden_cities">Choose a city in Sweden</label>
             <br>
             <select id="sweden_cities">
@@ -54,7 +55,8 @@
               <option value="gothenburg">Gothenburg</option>
               <option value="malmö">Malmö</option>
             </select>
-            <input type="submit" value="Enter" onclick="swedenCityWeather(sweden_cities.value)"><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
+            <input type="submit" value="Enter"
+              onclick="swedenCityWeather(sweden_cities.value)"><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
           </form>
           <h3>The weather here is:</h3>
           <div id="sweden_city_weather">--</div>
@@ -94,22 +96,68 @@
     </section>
     <!-- Section 3 -->
     <section id="section-3">
-      <div class="section_3_container"><h3>The weather of your chosen coordinates are:</h3>
-          <div id="chosen_city_weather">--</div><br>
-          <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div>
-          <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div></div><br>
-          <div>Minimum Temperature for the day is:<div id="chosen_city_min_temperature">--</div>C°</div><br>
-          <div>Maximum Temperature for the day is:<div id="chosen_city_max_temperature">--</div>C°</div><br>
-          <div>The sun rises at:<div id="chosen_city_sunrise">--</div></div> 
-          <div>The sun sets at:<div id="chosen_city_sunset">--</div></div> 
+      <div class="section_3_container">
+        <h3>The weather of your chosen coordinates are:</h3>
+        <div id="chosen_city_weather">--</div><br>
+        <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div>
+        <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div>
+        </div><br>
+        <div>Minimum Temperature for the day is:<div id="chosen_city_min_temperature">--</div>C°</div><br>
+        <div>Maximum Temperature for the day is:<div id="chosen_city_max_temperature">--</div>C°</div><br>
+        <div>The sun rises at:<div id="chosen_city_sunrise">--</div>
         </div>
+        <div>The sun sets at:<div id="chosen_city_sunset">--</div>
+        </div>
+      </div>
     </section>
     <!-- Section 4 -->
     <section id="section-4">
-
+      <h1>Forecast for the upcoming two days:</h1>
+      <div class="section_4_container">
+        <div class="section_4_item">
+          <div id="item_1_date">xx </div>
+          <div id="item_1_weather">cold</div>
+          <div id="item_1_temperature">colder</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_2_date">xx </div>
+          <div id="item_2_weather">cold</div>
+          <div id="item_2_temperature">colder</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_3_date">xx </div>
+          <div id="item_3_weather">cold</div>
+          <div id="item_3_temperature">colder</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_4_date">xx time xx</div>
+          <div id="item_4_weather">cold</div>
+          <div id="item_4_temperature">colder</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_5_date">xx time xx</div>
+          <div id="item_5_weather">cold</div>
+          <div id="item_5_temperature">colder</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_6_date">xx time xx</div>
+          <div id="item_6_weather">colder</div>
+          <div id="item_6_temperature">cold</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_7_date">xx time xx</div>
+          <div id="item_7_weather">cold</div>
+          <div id="item_7_temperature">colder</div>
+        </div>
+        <div class="section_4_item">
+          <div id="item_8_date">xx time xx</div>
+          <div id="item_8_weather">cold</div>
+          <div id="item_8_temperature">colder</div>
+        </div>
+      </div>
     </section>
   </main>
-  
+
   <!-- Footer -->
   <footer>
     <div class="footer_container">
@@ -119,7 +167,7 @@
         </div>
         <p class="website_rights">© </p>
         <span id="theme"></span><button id="theme-toggle">Change theme</button>
-        
+
       </div>
     </div>
   </footer>
@@ -128,4 +176,5 @@
   <script src="scripts/main.js" defer></script>
   <script src="scripts/theme.js" defer></script>
 </body>
+
 </html>
