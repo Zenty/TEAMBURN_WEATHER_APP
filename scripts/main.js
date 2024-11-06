@@ -83,6 +83,21 @@ function getCurrentWeatherData(cityname) {
 
 }
 
+function iconSwitch(id, icon){
+  switch(icon)
+  {
+    case "10d":
+      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/10d@2x.png\" alt=\"sunny icon\">";
+      break;
+    case "04d":
+      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/04d@2x.png\" alt=\"sunny icon\">";
+      break;
+    default:
+      document.getElementById(id).innerText = icon;
+      break;  
+  }
+}
+
 function rwandaCityWeather(cityRwanda) {
 
   getCurrentWeatherData(cityRwanda).then(newWeather => {
@@ -90,6 +105,7 @@ function rwandaCityWeather(cityRwanda) {
     document.getElementById("rwanda_city_temperature").innerText = innerText = newWeather.main.temp;
     document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
+    iconSwitch("rwanda_icon", newWeather.weather[0].icon);
   })
 }
 
@@ -99,6 +115,7 @@ function swedenCityWeather(citySweden) {
       document.getElementById("sweden_city_temperature").innerText = innerText = newWeather.main.temp;
       document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
       document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
+      iconSwitch("sweden_icon", newWeather.weather[0].icon);
     })
   }
 
