@@ -84,9 +84,18 @@ main section {
 
 /* Frontpage */
 main section#frontpage {
-  background-color: rgba(253, 253, 253, 0.336);
+  background-image: url("../images/frontpage-background-image.avif");
+  background-size: cover;
   min-height: 100vh;
-  margin:0;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+main section#frontpage .frontpage-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Section 1 */
