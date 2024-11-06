@@ -19,6 +19,8 @@
 body {
   color: var(--text);
   background: var(--background);
+  transition-property: var(--background);
+  transition-duration: 1.5s;
 }
 
 main section {
