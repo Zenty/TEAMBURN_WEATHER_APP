@@ -35,7 +35,7 @@
       <div class="section_one_container">
         <h2>Compare Sweden to Rwanda</h2>
         <div class="section_one_left"> 
-        <form action="preventdefault()">
+        <form action="#sweden_cities">
             <label for="sweden_cities">Choose a city in Sweden</label>
             <br>
             <select id="sweden_cities">
@@ -43,7 +43,7 @@
               <option value="gothenburg">Gothenburg</option>
               <option value="malmö">Malmö</option>
             </select>
-            <input type="submit" value="Enter"><button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button>
+            <input type="submit" value="Enter" onclick="swedenCityWeather(sweden_cities.value)"><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
           </form>
           <h3>The weather here is:</h3>
           <div id="sweden_city_weather">--</div>
@@ -52,7 +52,7 @@
           <div>The sun sets at:<div id="sweden_city_sunset">--</div></div>
         </div>
         <div class="section_one_right">
-          <form action="">
+          <form action="#rwanda_cities">
             <label for="rwanda_cities">Choosea a city in Rwanda</label>
             <br>
             <select id="rwanda_cities">
@@ -60,7 +60,7 @@
               <option value="gisenyi">Gisenyi</option>
               <option value="ruhengeri">Ruhengeri</option>
             </select>
-            <input type="submit" value="Enter">
+            <input type="submit" value="Enter" onclick="rwandaCityWeather(rwanda_cities.value)">
           </form>
           <h3>The weather here is:</h3>
           <div id="rwanda_city_weather">--</div>
@@ -81,13 +81,13 @@
     <!-- Section 3 -->
     <section class="section-3">
       <h3>The weather of your chosen coordinates are:</h3>
-          <div id="chosen_city_weather">--</div> newWeather.weather[0].description
-          <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div> newWeather.main.temp
-          <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div></div> newWeather.main.feels_like
-          <div>Minimum Temperature for the day is:<div id="chosen_city_min_temperature">--</div>C°</div> newWeather.main.temp_min
-          <div>Maximum Temperature for the day is:<div id="chosen_city_max_temperature">--</div>C°</div>newWeather.main.temp_max
-          <div>The sun rises at:<div id="chosen_city_sunrise">--</div></div> newWeather.sys.sunrise
-          <div>The sun sets at:<div id="chosen_city_sunset">--</div></div> newWeather.sys.sunset
+          <div id="chosen_city_weather">--</div><br>
+          <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div>
+          <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div></div><br>
+          <div>Minimum Temperature for the day is:<div id="chosen_city_min_temperature">--</div>C°</div><br>
+          <div>Maximum Temperature for the day is:<div id="chosen_city_max_temperature">--</div>C°</div><br>
+          <div>The sun rises at:<div id="chosen_city_sunrise">--</div></div> 
+          <div>The sun sets at:<div id="chosen_city_sunset">--</div></div> 
     </section>
     <!-- Section 4 -->
     <section class="section-4">

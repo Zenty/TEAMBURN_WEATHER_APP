@@ -81,10 +81,9 @@ function getCurrentWeatherData(latitude, longitude){
 }
 
 function rwandaCityWeather(cityRwanda){
-  console.log("start");
   if(cityRwanda == "kigali")
   {
-    getCurrentWeatherData(59.334591, 18.063240).then(newWeather => {document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
+    getCurrentWeatherData(-1.985070, 30.031855).then(newWeather => {document.getElementById("rwanda_city_weather").innerText = newWeather.weather[0].description;
       document.getElementById("rwanda_city_temperature").innerText = innerText = newWeather.main.temp;
       document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
       document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
@@ -92,7 +91,7 @@ function rwandaCityWeather(cityRwanda){
   }
   else if(cityRwanda == "gisenyi")
     {
-      getCurrentWeatherData(57.708870, 11.974560).then(newWeather => {document.getElementById("rwanda_city_weather").innerText = newWeather.weather[0].description;
+      getCurrentWeatherData(-1.70278, 29.25639).then(newWeather => {document.getElementById("rwanda_city_weather").innerText = newWeather.weather[0].description;
         document.getElementById("rwanda_city_temperature").innerText = innerText = newWeather.main.temp;
         document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
         document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
@@ -100,7 +99,7 @@ function rwandaCityWeather(cityRwanda){
     }
     else if (cityRwanda == "ruhengeri")
       {
-        getCurrentWeatherData(55.60587, 13.00073).then(newWeather => {document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
+        getCurrentWeatherData(-1.504, 29.636).then(newWeather => {document.getElementById("rwanda_city_weather").innerText = newWeather.weather[0].description;
           document.getElementById("rwanda_city_temperature").innerText = innerText = newWeather.main.temp;
           document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
           document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
@@ -110,11 +109,9 @@ function rwandaCityWeather(cityRwanda){
       {
         document.getElementById("rwanda_city_temperature").innerText = "Something went wrong, weather could not be found";
       }
-      console.log("end");
 }
 
 function swedenCityWeather(citySweden){
-  console.log("start");
   if(citySweden == "stockholm")
   {
     getCurrentWeatherData(59.334591, 18.063240).then(newWeather => {document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
@@ -143,7 +140,6 @@ function swedenCityWeather(citySweden){
       {
         document.getElementById("sweden_city_weather").innerText = "Something went wrong, weather could not be found";
       }
-      console.log("end");
 }
 
 function chosenCityWeather(latitudeIn, longitudeIn){
