@@ -202,6 +202,18 @@ main section#section-1 {
   min-height: 75vh;
 }
 
+.section_1_container{
+  display: flex;
+  border: 1px solid black;
+  flex-direction: row-reverse;
+  width: 50%;
+}
+
+.section_1_item{
+  border: 1px solid black;
+  width: 100%;
+}
+
 /* Section 2 */
 main section#section-2 {
   background-color: none;
@@ -232,20 +244,29 @@ main section#section-4 {
   padding: 4px;
   width: 500px;
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: none;
   white-space: nowrap;
-  border: 1px solid black;
-  height: 60vh;
+  height: 550px;
 }
 
 .section_4_item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -200px;
   flex-direction: row;
   border: 1px solid black;
   min-width: 300px;
+  max-height: 500px;
   padding: 10px;
   margin: 10px;
   text-align: center;
 }
+
+.section_4_item div{
+  background-color: rgb(24, 4, 4, .3);
+  color: #fff;
+}
+
 
 /* ************ */
 /*    Footer    */
