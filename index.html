@@ -98,12 +98,12 @@
       <h1>Enter a city here to check the weather:</h1>
       <input type="text" value="" id="cityname" placeholder="Name of the city">
       <br>
-      <button onclick="chosenCityWeather(cityname.value)">Search for coordinates</button>
+      <button onclick="chosenCityWeather(cityname.value); getForecastData(cityname.value)">Enter City</button>
     </section>
     <!-- Section 3 -->
     <section id="section-3">
       <div class="section_3_container">
-        <h3>The weather of your chosen coordinates are:</h3>
+        <h3>The weather of your chosen city is:</h3>
         <div id="chosen_city_weather">--</div><br>
         <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div>
         <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div>
@@ -120,45 +120,101 @@
     <section id="section-4">
       <h1>Forecast for the upcoming two days:</h1>
       <div class="section_4_container">
-        <div class="section_4_item">
-          <div id="item_1_date">xx </div>
-          <div id="item_1_weather">cold</div>
-          <div id="item_1_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_1_date">2024-01-01: 00:00:00</div>
+          <div id="item_1_weather">Weather</div>
+          <div id="item_1_temperature">-- C°</div>
+          <div id="item_1_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_2_date">xx </div>
-          <div id="item_2_weather">cold</div>
-          <div id="item_2_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_2_date">2024-01-01: 00:00:00</div>
+          <div id="item_2_weather">Weather</div>
+          <div id="item_2_temperature">-- C°</div>
+          <div id="item_2_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_3_date">xx </div>
-          <div id="item_3_weather">cold</div>
-          <div id="item_3_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_3_date">2024-01-01: 00:00:00</div>
+          <div id="item_3_weather">Weather</div>
+          <div id="item_3_temperature">-- C°</div>
+          <div id="item_3_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_4_date">xx time xx</div>
-          <div id="item_4_weather">cold</div>
-          <div id="item_4_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_4_date">2024-01-01: 00:00:00</div>
+          <div id="item_4_weather">Weather</div>
+          <div id="item_4_temperature">-- C°</div>
+          <div id="item_4_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_5_date">xx time xx</div>
-          <div id="item_5_weather">cold</div>
-          <div id="item_5_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_5_date">2024-01-01: 00:00:00</div>
+          <div id="item_5_weather">Weather</div>
+          <div id="item_5_temperature">-- C°</div>
+          <div id="item_5_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_6_date">xx time xx</div>
-          <div id="item_6_weather">colder</div>
-          <div id="item_6_temperature">cold</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_6_date">2024-01-01: 00:00:00</div>
+          <div id="item_6_weather">Weather</div>
+          <div id="item_6_temperature">-- C°</div>
+          <div id="item_6_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_7_date">xx time xx</div>
-          <div id="item_7_weather">cold</div>
-          <div id="item_7_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_7_date">2024-01-01: 00:00:00</div>
+          <div id="item_7_weather">Weather</div>
+          <div id="item_7_temperature">-- C°</div>
+          <div id="item_7_icon"></div>
         </div>
-        <div class="section_4_item">
-          <div id="item_8_date">xx time xx</div>
-          <div id="item_8_weather">cold</div>
-          <div id="item_8_temperature">colder</div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_8_date">2024-01-01: 00:00:00</div>
+          <div id="item_8_weather">Weather</div>
+          <div id="item_8_temperature">-- C°</div>
+          <div id="item_8_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_9_date">2024-01-01: 00:00:00</div>
+          <div id="item_9_weather">Weather</div>
+          <div id="item_9_temperature">-- C°</div>
+          <div id="item_9_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_10_date">2024-01-01: 00:00:00</div>
+          <div id="item_10_weather">Weather</div>
+          <div id="item_10_temperature">-- C°</div>
+          <div id="item_10_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_11_date">2024-01-01: 00:00:00</div>
+          <div id="item_11_weather">Weather</div>
+          <div id="item_11_temperature">-- C°</div>
+          <div id="item_11_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_12_date">2024-01-01: 00:00:00</div>
+          <div id="item_12_weather">Weather</div>
+          <div id="item_12_temperature">-- C°</div>
+          <div id="item_12_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_13_date">2024-01-01: 00:00:00</div>
+          <div id="item_13_weather">Weather</div>
+          <div id="item_13_temperature">-- C°</div>
+          <div id="item_13_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_14_date">2024-01-01: 00:00:00</div>
+          <div id="item_14_weather">Weather</div>
+          <div id="item_14_temperature">-- C°</div>
+          <div id="item_14_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_15_date">2024-01-01: 00:00:00</div>
+          <div id="item_15_weather">Weather</div>
+          <div id="item_15_temperature">-- C°</div>
+          <div id="item_15_icon"></div>
+        </div>
+        <div class="section_4_item" id="section_4_item_1">
+          <div id="item_16_date">2024-01-01: 00:00:00</div>
+          <div id="item_16_weather">Weather</div>
+          <div id="item_16_temperature">-- C°</div>
+          <div id="item_16_icon"></div>
         </div>
       </div>
     </section>

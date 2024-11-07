@@ -62,6 +62,56 @@ function Weather(Coord, Weather, Base, Main, Visibility, Wind, Clouds, Dt, Sys, 
     this.cod = Cod
 };
 
+forecast = {
+  dt: 1730970000,
+  main: {
+    temp: 280.79,
+    feels_like: 279.93,
+    temp_min: 280.79,
+    temp_max: 281.31,
+    pressure: 1031,
+    sea_level: 1031,
+    grnd_level: 1021,
+    humidity: 88,
+    temp_kf: -0.52
+  },
+  weather: [
+    {
+      id: 803,
+      main: "Clouds",
+      description: "broken clouds",
+      icon: "04d"
+    }
+  ],
+  clouds: {
+    all: 52
+  },
+  wind: {
+    speed: 1.66,
+    deg: 331,
+    gust: 3.21
+  },
+  visibility: 10000,
+  pop: 0,
+  sys: {
+    pod: "d"
+  },
+  dt_txt: "2024-11-07 09:00:00"
+}
+
+//constructor to create a weatherobject
+function Forecast(Dt, Main, Weather, Clouds, Wind, Visibility, Pop, Sys, Dt_txt) {
+  this.dt = Dt
+  this.main = Main,
+    this.weather = Weather,
+    this.clouds = Clouds,
+    this.wind = Wind,
+    this.visibility = Visibility,
+    this.pop = Pop,
+    this.sys = Sys,
+    this.dt_txt = Dt_txt
+};
+
 //function to create a weatherobject from the openweathermap API. Takes a cityname to fetch correct data for the city.
 function getCurrentWeatherData(cityname) {
   return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=df4c0154d893ba9c3ae1e611a27a169b&units=metric`)
@@ -83,13 +133,27 @@ function getCurrentWeatherData(cityname) {
         weatherData.cod,
       )
     })
+}
 
+//function that fetches data from forecast API and places it in the corresponding boxes in section 4, uses the same input as chosenCityWeather-function
+function getForecastData(cityname) {
+  return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityname}&appid=df4c0154d893ba9c3ae1e611a27a169b&units=metric`)
+    .then(response => response.json())
+    .then(forecastData => {
+      for( let i=0; i < 16; i++)
+        {
+          document.getElementById(`item_${i + 1}_date`).innerText = forecastData.list[i].dt_txt;
+          document.getElementById(`item_${i + 1}_weather`).innerText = forecastData.list[i].weather[0].main;
+          document.getElementById(`item_${i + 1}_temperature`).innerText = forecastData.list[i].main.temp + " C°";
+          iconSwitch(`item_${i + 1}_icon`, forecastData.list[i].weather[0].icon);
+        }
+    })
+    .catch(error => console.error("error fetching forecast data:", error));
 }
 
 //function that takes id of the element we want to print the icon to aswell as loads the icon from the weatherobject.
-function iconSwitch(id, icon){
-  switch(icon)
-  {
+function iconSwitch(id, icon) {
+  switch (icon) {
     case "01d":
       document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/01d@2x.png\" alt=\"sunny icon\">";
       break;
@@ -146,7 +210,7 @@ function iconSwitch(id, icon){
       break;
     default:
       document.getElementById(id).innerText = icon;
-      break;  
+      break;
   }
 }
 
@@ -166,19 +230,19 @@ function rwandaCityWeather(cityRwanda) {
 //function to set the weather in the sweden-part of the comparison. Creates a weatherobject throug the getCurrentWeatherData-method and 
 //then sets the data to correct id's
 function swedenCityWeather(citySweden) {
-    getCurrentWeatherData(citySweden).then(newWeather => {
-      document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
-      document.getElementById("sweden_city_temperature").innerText = innerText = newWeather.main.temp;
-      document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
-      document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
-      iconSwitch("sweden_icon", newWeather.weather[0].icon);
-    })
-  }
+  getCurrentWeatherData(citySweden).then(newWeather => {
+    document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
+    document.getElementById("sweden_city_temperature").innerText = innerText = newWeather.main.temp;
+    document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
+    document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
+    iconSwitch("sweden_icon", newWeather.weather[0].icon);
+  })
+}
 
 
 //function to set the data in free-search part of the weather app, in section 3. Creates a weatherobject throug the getCurrentWeatherData-method and 
 //then sets the data to correct id's
-  function chosenCityWeather(cityname) {
+function chosenCityWeather(cityname) {
   getCurrentWeatherData(cityname).then(newWeather => {
     document.getElementById("chosen_city_weather").innerText = newWeather.weather[0].description;
     document.getElementById("chosen_city_temperature").innerText = newWeather.main.temp;
