@@ -19,16 +19,24 @@ function rotateTheme(theme) {
 
 const themeDisplay = document.getElementById('theme');
 const themeToggler = document.getElementById('theme-toggle');
+const sliderText = document.getElementById('slider-text');
 
 let theme = getTheme();
 applyTheme(theme);
-themeDisplay.innerText = theme;
+themeDisplay.innerText = `Current theme: ${theme.charAt(0).toUpperCase() + theme.slice(1)}`;
+
+sliderText.setAttribute('data-hover-text', `Switch to ${rotateTheme(theme).charAt(0).toUpperCase() + rotateTheme(theme).slice(1)} Theme`);
+/*themeToggler.innerText = `Switch to ${rotateTheme(theme)} theme`;*/
+themeToggler.checked = theme === 'warm';
 
 themeToggler.onclick = () => {
     const newTheme = rotateTheme(theme);
     applyTheme(newTheme);
-    themeDisplay.innerText = newTheme;
+    themeDisplay.innerText = `Current theme: ${newTheme.charAt(0).toUpperCase() + newTheme.slice(1)}`;
+
+    sliderText.setAttribute('data-hover-text', `Switch to ${rotateTheme(newTheme).charAt(0).toUpperCase() + rotateTheme(newTheme).slice(1)} Theme`)
     saveTheme(newTheme);
+    /*themeToggler.innerText = `Switch to ${rotateTheme(newTheme)} theme`;*/
 
     theme = newTheme;
 }
