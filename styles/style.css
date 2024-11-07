@@ -122,7 +122,7 @@ main section#section-3 {
 /* Section 4 */
 main section#section-4 {
   background-color: rgba(253, 253, 253, 0.336);
-  min-height: 75vh;
+  /* min-height: 75vh; */
 }
 
 .section_4_container {
@@ -132,19 +132,27 @@ main section#section-4 {
   padding: 4px;
   width: 500px;
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: none;
   white-space: nowrap;
-  border: 1px solid black;
-  height: 60vh;
+  height: 550px;
 }
 
 .section_4_item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -200px;
   flex-direction: row;
   border: 1px solid black;
   min-width: 300px;
+  max-height: 500px;
   padding: 10px;
   margin: 10px;
   text-align: center;
+}
+
+.section_4_item div{
+  background-color: rgb(24, 4, 4, .3);
+  color: #fff;
 }
 
 
