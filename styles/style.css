@@ -107,6 +107,18 @@ main section#section-1 {
   min-height: 100vh;
 }
 
+.section_1_container{
+  display: flex;
+  border: 1px solid black;
+  flex-direction: row-reverse;
+  width: 50%;
+}
+
+.section_1_item{
+  border: 1px solid black;
+  width: 100%;
+}
+
 /* Section 2 */
 main section#section-2 {
   background-color: rgba(253, 253, 253, 0.336);
