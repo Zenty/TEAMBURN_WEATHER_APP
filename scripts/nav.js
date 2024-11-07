@@ -18,9 +18,10 @@ document.getElementById("hamburger").addEventListener("click", function() {
 // Nav Scroll
 window.onscroll = () => {
   var current = "";
+  var midOfDevice = window.innerHeight / 2;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 1;
+    const sectionTop = section.offsetTop - midOfDevice;
     if (scrollY >= sectionTop ) {
       current = section.getAttribute("id"); }
   });

@@ -12,7 +12,7 @@
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel="stylesheet"> <!-- Open Sans Font -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/typography.css">
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/media-queries.css">
@@ -41,7 +41,12 @@
     <!-- Frontpage -->
     <section id="frontpage">
       <div class="frontpage-container">
-        <h1>WEATHER APP<br>by Team <span>BURN</span></h1>
+        <div class="frontpage-inner-container">
+          <div class="wrapper">
+            <h1>WEATHER APP</h1>
+            <h2>TEAM <span>BURN</span></h2>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Section 1 -->
@@ -95,7 +100,7 @@
     </section>
     <!-- Section 2 -->
     <section id="section-2">
-      <h1>Enter a city here to check the weather:</h1>
+      <h2>Enter a city here to check the weather:</h2>
       <input type="text" value="" id="cityname" placeholder="Name of the city">
       <br>
       <button onclick="chosenCityWeather(cityname.value); getForecastData(cityname.value)">Enter City</button>
@@ -118,7 +123,7 @@
     </section>
     <!-- Section 4 -->
     <section id="section-4">
-      <h1>Forecast for the upcoming two days:</h1>
+      <h2>Forecast for the upcoming two days:</h2>
       <div class="section_4_container">
         <div class="section_4_item" id="section_4_item_1">
           <div id="item_1_date">2024-01-01: 00:00:00</div>
