@@ -5,8 +5,8 @@
 :root[data-theme="cold"] {
   color-scheme: light;
   --text: white;
-  --team-burn: #009fff;
-  --secondary-heading-color: rgb(0 128 255);
+  --team-burn: rgb(0 128 255);
+  --secondary-heading-color: #3500ff;
   --secondary-background-gradient: linear-gradient(75deg, #99ccff93 0%, #3399ff9d 50%, #000099a9 100%);
   --background: linear-gradient(to left, #99ccff93 0%, #3399ff9d 50%, #000099a9 100%);
   --background-section: rgb(55 60 120);
