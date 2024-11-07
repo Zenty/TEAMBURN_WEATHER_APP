@@ -163,6 +163,10 @@ footer {
 
 .footer_container {
   color: snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 
@@ -171,6 +175,7 @@ footer {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-left: 800px;
 }
 
 .switch input {
