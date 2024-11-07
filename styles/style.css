@@ -160,3 +160,29 @@ footer {
   flex-wrap: wrap;
   align-content: flex-start;
 }
+
+.footer_container{
+  color: snow;
+}
+
+#footer_logo{
+  
+}
+
+#theme-toggle {
+  background-color: #333;
+  color: white;
+  width: 50px; /* Gör knappen kvadratisk */
+  height: 50px;
+  border: none;
+  border-radius: 50%; /* Gör knappen rund */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: #555; /*higlight färg*/
+}
