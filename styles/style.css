@@ -139,6 +139,8 @@ main section#section-4 {
 }
 
 .section_4_item{
+  background-size: cover;
+  background-position-x: right -100px;
   flex-direction: row;
   border: 1px solid black; 
   min-width: 300px;
@@ -146,6 +148,7 @@ main section#section-4 {
   margin: 10px; 
   text-align:center;
 }
+
 
 /* ************ */
 /*    Footer    */
