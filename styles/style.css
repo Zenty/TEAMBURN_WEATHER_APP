@@ -72,14 +72,18 @@ main {
 main section {
   min-height: 300px;
   padding: 50px;
-  padding-left: 300px;
+  padding-left: 250px;
+  padding-right: 250px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  margin: 20px;
+  margin: 25px;
   border: 1px transparent;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+main section:nth-child(1n+3) {
+  margin-top: 0;
 }
 
 /* Frontpage */
@@ -90,38 +94,146 @@ main section#frontpage {
   margin: 0;
   padding: 0;
   border-radius: 0;
+  overflow: hidden;
 }
 
 main section#frontpage .frontpage-container {
   width: 100%;
   min-height: 100vh;
   background: var(--secondary-background-gradient);
+  padding: 25px;
+}
+
+main section#frontpage .frontpage-container .frontpage-inner-container {
+  width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 6px double rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+  animation-name: frontpage-border;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes frontpage-border {
+  0% { 
+    border: 6px double rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+  }
+  25% {
+    border: 6px double rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    border: 6px double rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    border: 6px double rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    border: 6px double rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+  }
+}
+
+main section#frontpage .frontpage-container .frontpage-inner-container .wrapper {
+  position: relative;
+}
+
+main section#frontpage .frontpage-container .frontpage-inner-container h1 {
+  animation: frontpage-h1 0.75s ease-in-out, frontpage-h1-glow 1s ease-in-out infinite;
+}
+
+@keyframes frontpage-h1 {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes frontpage-h1-glow {
+  0% {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+  }
+  50% {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+  }
+}
+
+main section#frontpage .frontpage-container .frontpage-inner-container h2 {
+  animation: frontpage-h2 1.5s ease-in-out;
+  position: absolute;
+  margin-top: 0px;
+  opacity: 1;
+}
+
+@keyframes frontpage-h2 {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  50% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+  }
 }
 
 /* Section 1 */
 main section#section-1 {
-  background-color: rgba(253, 253, 253, 0.336);
-  min-height: 100vh;
+  background-color: var(--background-section);
+  min-height: 75vh;
+}
+
+.section_1_container{
+  display: flex;
+  border: 1px solid black;
+  flex-direction: row-reverse;
+  width: 50%;
+}
+
+.section_1_item{
+  border: 1px solid black;
+  width: 100%;
 }
 
 /* Section 2 */
 main section#section-2 {
-  background-color: rgba(253, 253, 253, 0.336);
-  min-height: 200px;
+  background-color: none;
+  min-height: 300px;
+  box-shadow: none;
+}
+
+main section#section-2 input, main section#section-2 button {
+  padding: 10px 20px;
 }
 
 /* Section 3 */
 main section#section-3 {
-  background-color: rgba(253, 253, 253, 0.336);
+  background-color: var(--background-section);
   min-height: 75vh;
 }
 
 /* Section 4 */
 main section#section-4 {
-  background-color: rgba(253, 253, 253, 0.336);
+  background-color: var(--background-section);
   min-height: 75vh;
 }
 
@@ -132,20 +244,29 @@ main section#section-4 {
   padding: 4px;
   width: 500px;
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: none;
   white-space: nowrap;
-  border: 1px solid black;
-  height: 60vh;
+  height: 550px;
 }
 
 .section_4_item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -200px;
   flex-direction: row;
   border: 1px solid black;
   min-width: 300px;
+  max-height: 500px;
   padding: 10px;
   margin: 10px;
   text-align: center;
 }
+
+.section_4_item div{
+  background-color: rgb(24, 4, 4, .3);
+  color: #fff;
+}
+
 
 /* ************ */
 /*    Footer    */
@@ -155,7 +276,8 @@ footer {
   width: 100%;
   min-height: 200px;
   padding: 50px;
-  padding-left: 300px;
+  padding-left: 250px;
+  padding-right: 250px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
