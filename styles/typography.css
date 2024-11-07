@@ -5,10 +5,11 @@
 :root[data-theme="cold"] {
   color-scheme: light;
   --text: white;
-  --team-burn: #f900ff;
-  --secondary-heading-color: rgb(0 128 255);
+  --team-burn: #009fff;
+  --secondary-heading-color: rgb(27 0 255);
   --secondary-background-gradient: linear-gradient(75deg, #00000033 0%, #c700ff99 50%, #0602ffa3 100%);
   --background: linear-gradient(to left, #99ccff93 0%, #3399ff9d 50%, #000099a9 100%);
+  --background-section: rgb(55 60 120);
 
 }
 
@@ -19,7 +20,8 @@
   --secondary-heading-color: rgb(255 73 0);
   --secondary-background-gradient: linear-gradient(75deg, #00000033 0%, #ff650099 50%, #ffde0296 100%);
   --background: linear-gradient(to right, #ff3300a2 0%, #ff0000a2 50%, #8000008f 100%);
-  --border-radius: 10%;
+  --background-section: rgb(255 167 94);
+  --border-radius: 25px;
 }
 
 body {
@@ -51,6 +53,10 @@ h3 {
   padding-bottom: 20px;
 }
 
+h1 { font-size: 60px; }
+h2 { font-size: 44px; }
+h3 { font-size: 30px; }
+
 /* Header */
 header nav ul li a { display: inline-block; font-size: 18px; color: white; padding: 10px; text-decoration: none; transition: 0.2s ease-in-out; text-shadow: 0px 0px 5px black; }
 header nav ul li.active a { padding-left: 25px; }
@@ -58,8 +64,9 @@ header nav ul li a:hover { padding-left: 25px; }
 header nav ul li::marker { color: white; }
 
 /* Main - Startpage */
-main section#frontpage h1 { font-size: 60px; color: white; text-shadow: 3px 3px 0px var(--secondary-heading-color); }
-main section#frontpage h1 span { color: var(--team-burn); }
+main section#frontpage h1 { color: white; text-shadow: 0px 4px 0px var(--secondary-heading-color); padding-bottom: 0; line-height: 50px; }
+main section#frontpage h2 { color: var(--team-burn); text-shadow: 3px -3px 0px var(--secondary-heading-color); }
+main section#frontpage h2 span { text-shadow: -3px -3px 0px var(--secondary-heading-color); }
 
 /* Main - Section 1 */
 /* Main - Section 2 */
