@@ -33,6 +33,7 @@ header {
   min-height: 100vh;
   position: fixed;
   left: 0;
+  z-index: 1;
 }
 
 header nav {
@@ -150,7 +151,7 @@ main section#frontpage .frontpage-container .frontpage-inner-container .wrapper 
 }
 
 main section#frontpage .frontpage-container .frontpage-inner-container h1 {
-  animation: frontpage-h1 0.75s ease-in-out, frontpage-h1-glow 1s ease-in-out infinite;
+  animation: frontpage-h1 0.75s ease-in-out, frontpage-h1-glow 3s ease-in-out infinite;
 }
 
 @keyframes frontpage-h1 {
@@ -230,6 +231,7 @@ main section#section-2 {
   background-color: none;
   min-height: 300px;
   box-shadow: none;
+  align-content: center;
 }
 
 main section#section-2 input,
