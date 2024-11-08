@@ -26,4 +26,7 @@
   main section, footer { padding: 25px; }
   main section .frontpage-container { padding: 25px; }
   main section .frontpage-container h1 { line-height: 50px; }
+
+  /* Section 4 */
+  main section#section-4 .section_4_item { min-width: 230px; }
 }
