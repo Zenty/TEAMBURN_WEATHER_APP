@@ -142,9 +142,10 @@ function getForecastData(cityname) {
     .then(forecastData => {
       for( let i=0; i < 16; i++)
         {
+          document.getElementById(`item_${i + 1}_city`).innerText = cityname;
           document.getElementById(`item_${i + 1}_date`).innerText = forecastData.list[i].dt_txt;
           document.getElementById(`item_${i + 1}_weather`).innerText = forecastData.list[i].weather[0].main;
-          document.getElementById(`item_${i + 1}_temperature`).innerText = forecastData.list[i].main.temp + " C°";
+          document.getElementById(`item_${i + 1}_temperature`).innerText = Math.round(forecastData.list[i].main.temp) + "°";
           iconSwitch(`item_${i + 1}_icon`, forecastData.list[i].weather[0].icon);
           forecastBackgroundSwitch(`section_4_item_${i + 1}`, forecastData.list[i].weather[0].icon);
         }
@@ -218,58 +219,58 @@ function iconSwitch(id, icon) {
 function forecastBackgroundSwitch(id, icontxt){
     switch (icontxt) {
       case "01d":
-        document.getElementById(id).style.backgroundImage = "url('../images/sunnyclearsky.jpg')";
+        document.getElementById(id).style.backgroundImage = "url('images/sunnyclearsky.jpg')";
         break;
       case "02d":
-        document.getElementById(id).style.backgroundImage = "url('../images/cloudysun.jpg')";
+        document.getElementById(id).style.backgroundImage = "url('images/cloudysun.jpg')";
         break;
       case "03d":
-        document.getElementById(id).style.backgroundImage = "url('../images/scatteredclouds.avif')";
+        document.getElementById(id).style.backgroundImage = "url('images/scatteredclouds.avif')";
         break;
       case "04d":
-        document.getElementById(id).style.backgroundImage = "url('../images/brokenclouds.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/brokenclouds.jpg')"
         break;
       case "09d":
-        document.getElementById(id).style.backgroundImage = "url('../images/showerrain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrain.jpg')"
         break;
       case "10d":
-        document.getElementById(id).style.backgroundImage = "url('../images/rain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url(images/rain.jpg')"
         break;
       case "11d":
-        document.getElementById(id).style.backgroundImage = "url('../images/thunderstorm.webp')"
+        document.getElementById(id).style.backgroundImage = "url('images/thunderstorm.webp')"
         break;
       case "13d":
-        document.getElementById(id).style.backgroundImage = "url('../images/snow.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/snow.jpg')"
         break;
       case "50d":
-        document.getElementById(id).style.backgroundImage = "url('../images/mist.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/mist.jpg')"
         break;
       case "01n":
-        document.getElementById(id).style.backgroundImage = "url('../images/clearskynight.webp')"
+        document.getElementById(id).style.backgroundImage = "url('images/clearskynight.webp')"
         break;
       case "02n":
-        document.getElementById(id).style.backgroundImage = "url('../images/fewcloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/fewcloudsnight.jpg')"
         break;
       case "03n":
-        document.getElementById(id).style.backgroundImage = "url('../images/scatteredcloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/scatteredcloudsnight.jpg')"
         break;
       case "04n":
-        document.getElementById(id).style.backgroundImage = "url('../images/brokencloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/brokencloudsnight.jpg')"
         break;
       case "09n":
-        document.getElementById(id).style.backgroundImage = "url('../images/showerrainnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')"
         break;
       case "10n":
-        document.getElementById(id).style.backgroundImage = "url('../images/showerrainnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')"
         break;
       case "11n":
-        document.getElementById(id).style.backgroundImage = "url('../images/thunderstormnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/thunderstormnight.jpg')"
         break;
       case "13n":
-        document.getElementById(id).style.backgroundImage = "url('../images/snownight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/snownight.jpg')"
         break;
       case "50n":
-        document.getElementById(id).style.backgroundImage = "url('../images/mistnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/mistnight.jpg')"
         break;
       default:
         document.getElementById(id).innerText = icon;
