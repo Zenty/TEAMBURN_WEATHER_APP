@@ -366,3 +366,34 @@ function backgroundColorComparison(temperature, id){
   }
 }
 
+let currentLatitude = "";
+let currentLongitude = "";
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+
+  function showPosition(position) {
+    fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=1&appid=df4c0154d893ba9c3ae1e611a27a169b`)
+    .then(response => response.json())
+    .then(currentCity => {
+      chosenCityWeather(currentCity[0].name);
+      getForecastData(currentCity[0].name); 
+    })
+  }
+
+  function startScript(){
+    getLocation();
+    let startingValueSweden = document.getElementById("sweden_cities").value;
+    let startingValueRwanda = document.getElementById("rwanda_cities").value;
+    swedenCityWeather(startingValueSweden);
+    rwandaCityWeather(startingValueRwanda);
+  }
+
+  startScript();
+
