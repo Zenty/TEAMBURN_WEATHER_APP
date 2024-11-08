@@ -10,7 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> <!-- Open Sans Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet"> <!-- Open Sans Font -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/typography.css">
@@ -54,19 +55,20 @@
       <h2>Compare Sweden to Rwanda</h2>
       <div class="section_1_container">
         <div class="section_1_item" id="sweden_comparison">
-            <label for="sweden_cities">Choose a city in Sweden</label>
-            <br>
-            <select id="sweden_cities">
-              <option value="stockholm">Stockholm</option>
-              <option value="gothenburg">Gothenburg</option>
-              <option value="malmö">Malmö</option>
-            </select>
-            <button
-              onclick="swedenCityWeather(sweden_cities.value)">Enter</button><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
-        
+          <label for="sweden_cities">Choose a city in Sweden</label>
+          <br>
+          <select id="sweden_cities">
+            <option value="stockholm">Stockholm</option>
+            <option value="gothenburg">Gothenburg</option>
+            <option value="malmö">Malmö</option>
+          </select>
+          <button
+            onclick="swedenCityWeather(sweden_cities.value)">Enter</button><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
+
           <h3>The weather here is:</h3>
           <div id="sweden_city_weather">--</div>
-          <div>The temperature is:<div id="sweden_city_temperature">--</div></div>
+          <div>The temperature is:<div id="sweden_city_temperature">--</div>
+          </div>
           <div>The sun rises at:<div id="sweden_city_sunrise">--</div>
           </div>
           <div>The sun sets at:<div id="sweden_city_sunset">--</div>
@@ -74,19 +76,20 @@
           <div id="sweden_icon">--</div>
         </div>
         <div class="section_1_item" id="rwanda_comparison">
-          
-            <label for="rwanda_cities">Choose a city in Rwanda</label>
-            <br>
-            <select id="rwanda_cities">
-              <option value="kigali">Kigali</option>
-              <option value="gisenyi">Gisenyi</option>
-              <option value="ruhengeri">Ruhengeri</option>
-            </select>
-            <button onclick="rwandaCityWeather(rwanda_cities.value)">Enter</button>
-          
+
+          <label for="rwanda_cities">Choose a city in Rwanda</label>
+          <br>
+          <select id="rwanda_cities">
+            <option value="kigali">Kigali</option>
+            <option value="gisenyi">Gisenyi</option>
+            <option value="ruhengeri">Ruhengeri</option>
+          </select>
+          <button onclick="rwandaCityWeather(rwanda_cities.value)">Enter</button>
+
           <h3>The weather here is:</h3>
           <div id="rwanda_city_weather">--</div>
-          <div>The temperature is:<div id="rwanda_city_temperature">--</div></div>
+          <div>The temperature is:<div id="rwanda_city_temperature">--</div>
+          </div>
           <div>The sun rises at:<div id="rwanda_city_sunrise">--</div>
           </div>
           <div>The sun sets at:<div id="rwanda_city_sunset">--</div>
@@ -109,16 +112,20 @@
       <div class="section_3_container">
         <div class="section_3_item">
           <div id="chosen_city_weather">--</div>
-          <div>The current temperature is:<div id="chosen_city_temperature">--</div></div>
+          <div>The current temperature is:<div id="chosen_city_temperature">--</div>
+          </div>
         </div>
         <div class="section_3_item">
-          <div>The temperature feels like:<div id="chosen_city_temperature_feels_like">--</div></div>
+          <div>The temperature feels like:<div id="chosen_city_temperature_feels_like">--</div>
+          </div>
         </div>
         <div class="section_3_item">
-          <div>Min Temperature:<div id="chosen_city_min_temperature">--</div></div>
+          <div>Min Temperature:<div id="chosen_city_min_temperature">--</div>
+          </div>
         </div>
         <div class="section_3_item">
-          <div>Max Temperature:<div id="chosen_city_max_temperature">--</div></div>
+          <div>Max Temperature:<div id="chosen_city_max_temperature">--</div>
+          </div>
         </div>
         <div class="section_3_item">
           <div>Sunrise:<div id="chosen_city_sunrise">--</div>
@@ -215,7 +222,7 @@
             <div id="item_9_weather">Weather</div>
             <div id="item_9_temperature">--°</div>
             <div id="item_9_icon"></div>
-          </div> 
+          </div>
         </div>
         <div class="section_4_item" id="section_4_item_10">
           <div class="item-wrapper">
@@ -295,11 +302,13 @@
       </div>
 
       <!-- Theme toggle switch and text can stay outside this container -->
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider" id="slider-text"></span>
-      </label>
-      <span id="theme">Current theme: Cold</span>
+      <div class="theme_switch">
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider" id="slider-text"></span>
+        </label>
+        <span id="theme">Current theme: Warm</span>
+      </div>
     </div>
   </footer>
 
