@@ -142,6 +142,8 @@ function getForecastData(cityname) {
     .then(forecastData => {
       for( let i=0; i < 16; i++)
         {
+          document.getElementsByClassName("section_4_nocity")[0].style.display = "none";
+          document.getElementsByClassName("section_4_container")[0].style.display = "flex";
           document.getElementById(`item_${i + 1}_city`).innerText = cityname;
           document.getElementById(`item_${i + 1}_date`).innerText = forecastData.list[i].dt_txt;
           document.getElementById(`item_${i + 1}_weather`).innerText = forecastData.list[i].weather[0].main;

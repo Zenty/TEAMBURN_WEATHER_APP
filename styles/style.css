@@ -236,14 +236,24 @@ main section#section-3 {
 /* Section 4 */
 main section#section-4 {
   background-color: var(--background-section);
-  min-height: 75vh;
+  min-height: 200px;
+}
+
+main section#section-4 .section_4_nocity {
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 20px;
 }
 
 .section_4_container {
-  display: flex;
+  display: none;
   flex-direction: row;
   margin: 4px, 4px;
-  padding: 4px;
+  padding: 0;
+  padding-bottom: 25px;
   width: 100%;
   overflow-x: auto;
   overflow-y: none;
@@ -256,10 +266,11 @@ main section#section-4 {
   background-repeat: no-repeat;
   background-position-x: center;
   flex-direction: row;
-  border: 1px solid black;
+  border: 1px solid rgb(95, 95, 95);
   min-width: 300px;
   max-height: 400px;
-  margin-left: 30px;
+  margin-left: 34px;
+  box-shadow: 0px 0px 0px 1px rgba(255,255,255,1) inset, 0px 0px 100px 10px rgba(255,255,255,0.8) inset;
 }
 
 .section_4_item:first-of-type {
@@ -285,15 +296,17 @@ main section#section-4 {
   text-transform: capitalize;
   font-size: 36px;
   line-height: 36px;
+  color: white;
 }
 
 .section_4_item .item-wrapper div:nth-of-type(3) {
   font-size: 18px;
   padding-top: 5px;
+  color: white;
 }
 
 .section_4_item .item-wrapper div:nth-of-type(4) {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 180px;
   line-height: 200px;
   font-weight: 300;
