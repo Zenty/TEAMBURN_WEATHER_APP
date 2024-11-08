@@ -105,20 +105,32 @@
     </section>
     <!-- Section 3 -->
     <section id="section-3">
+      <h3>The weather of your chosen city is:</h3>
       <div class="section_3_container">
-        <h3>The weather of your chosen city is:</h3>
-        <div id="chosen_city_weather">--</div><br>
-        <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div>
-        <div>The current temperature feels like:<div id="chosen_city_temperature_feels_like"></div>
-        </div><br>
-        <div>Minimum Temperature for the day is:<div id="chosen_city_min_temperature">--</div>C°</div><br>
-        <div>Maximum Temperature for the day is:<div id="chosen_city_max_temperature">--</div>C°</div><br>
-        <div>The sun rises at:<div id="chosen_city_sunrise">--</div>
+        <div class="section_3_item">
+          <div id="chosen_city_weather">--</div>
+          <div>The current temperature is:<div id="chosen_city_temperature">--</div>°C</div>
         </div>
-        <div>The sun sets at:<div id="chosen_city_sunset">--</div>
+        <div class="section_3_item">
+          <div>The temperature feels like:<div id="chosen_city_temperature_feels_like">--</div>°C</div>
+        </div>
+        <div class="section_3_item">
+          <div>Min Temperature:<div id="chosen_city_min_temperature">--</div>°C</div>
+        </div>
+        <div class="section_3_item">
+          <div>Max Temperature:<div id="chosen_city_max_temperature">--</div>°C</div>
+        </div>
+        <div class="section_3_item">
+          <div>Sunrise:<div id="chosen_city_sunrise">--</div>
+          </div>
+        </div>
+        <div class="section_3_item">
+          <div>Sunset:<div id="chosen_city_sunset">--</div>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- Section 4 -->
     <section id="section-4">
       <h2>Forecast for the upcoming two days:</h2>
@@ -226,15 +238,22 @@
   <!-- Footer -->
   <footer>
     <div class="footer_container">
-      <a href="index.html" id="footer_logo" aria-label="Go to homepage"><i class="fa fa-cloud"></i>Weather app</a>
-      <p class="website_rights">©Team Burn. All rights reserved </p>
+      <div class="footer_text">
+        <a href="index.html" id="footer_logo" aria-label="Go to homepage">
+          <i class="fa fa-cloud"></i> Weather app
+        </a>
+        <p class="website_rights">©Team Burn. All rights reserved</p>
+      </div>
+
+      <!-- Theme toggle switch and text can stay outside this container -->
       <label class="switch">
         <input type="checkbox" id="theme-toggle">
         <span class="slider" id="slider-text"></span>
       </label>
-      <span id="theme"></span>
+      <span id="theme">Current theme: Cold</span>
     </div>
   </footer>
+
   <!-- Scripts -->
   <script src="scripts/nav.js" defer></script>
   <script src="scripts/main.js" defer></script>
