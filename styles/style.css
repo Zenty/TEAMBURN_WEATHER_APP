@@ -396,9 +396,6 @@ footer {
   padding: 50px;
   padding-left: 250px;
   padding-right: 250px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
 }
 
 .footer_container {
@@ -410,6 +407,7 @@ footer {
 }
 
 .footer_text {
+  font-style: oblique;
   display: flex;
   flex-direction: column;
   gap: 5px;
