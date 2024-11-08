@@ -308,10 +308,10 @@ function swedenCityWeather(citySweden) {
 function chosenCityWeather(cityname) {
   getCurrentWeatherData(cityname).then(newWeather => {
     document.getElementById("chosen_city_weather").innerText = newWeather.weather[0].description;
-    document.getElementById("chosen_city_temperature").innerText = newWeather.main.temp;
-    document.getElementById("chosen_city_temperature_feels_like").innerText = newWeather.main.feels_like;
-    document.getElementById("chosen_city_min_temperature").innerText = newWeather.main.temp_min;
-    document.getElementById("chosen_city_max_temperature").innerText = newWeather.main.temp_max;
+    document.getElementById("chosen_city_temperature").innerText = newWeather.main.temp + " C°";
+    document.getElementById("chosen_city_temperature_feels_like").innerText = newWeather.main.feels_like + " C°";
+    document.getElementById("chosen_city_min_temperature").innerText = newWeather.main.temp_min + " C°";
+    document.getElementById("chosen_city_max_temperature").innerText = newWeather.main.temp_max + " C°";
     document.getElementById("chosen_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("chosen_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
   })
