@@ -249,7 +249,7 @@ main section#section-2 button {
 /* Section 3 */
 main section#section-3 {
   background-color: var(--background-section);
-  min-height: 75vh;
+  min-height: 200px;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
@@ -268,8 +268,17 @@ main section#section-3 {
   margin: 10px 0;
 }
 
+main section#section-3 .section_3_nocity {
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 20px;
+}
+
 .section_3_container {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
@@ -289,7 +298,7 @@ main section#section-3 {
 /* Section 4 */
 main section#section-4 {
   background-color: var(--background-section);
-  min-height: 2git 00px;
+  min-height: 200px;
 }
 
 main section#section-4 .section_4_nocity {
