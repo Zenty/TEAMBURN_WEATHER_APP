@@ -142,9 +142,14 @@ function getForecastData(cityname) {
     .then(forecastData => {
       for( let i=0; i < 16; i++)
         {
+          document.getElementsByClassName("section_4_nocity")[0].style.display = "none";
+          document.getElementsByClassName("section_4_container")[0].style.display = "flex";
+          document.getElementsByClassName("section_3_nocity")[0].style.display = "none";
+          document.getElementsByClassName("section_3_container")[0].style.display = "flex";
+          document.getElementById(`item_${i + 1}_city`).innerText = cityname;
           document.getElementById(`item_${i + 1}_date`).innerText = forecastData.list[i].dt_txt;
           document.getElementById(`item_${i + 1}_weather`).innerText = forecastData.list[i].weather[0].main;
-          document.getElementById(`item_${i + 1}_temperature`).innerText = forecastData.list[i].main.temp + " C°";
+          document.getElementById(`item_${i + 1}_temperature`).innerText = Math.round(forecastData.list[i].main.temp) + "°";
           iconSwitch(`item_${i + 1}_icon`, forecastData.list[i].weather[0].icon);
           forecastBackgroundSwitch(`section_4_item_${i + 1}`, forecastData.list[i].weather[0].icon);
         }
@@ -218,58 +223,58 @@ function iconSwitch(id, icon) {
 function forecastBackgroundSwitch(id, icontxt){
     switch (icontxt) {
       case "01d":
-        document.getElementById(id).style.backgroundImage = "url('../images/sunnyclearsky.jpg')";
+        document.getElementById(id).style.backgroundImage = "url('images/sunnyclearsky.jpg')";
         break;
       case "02d":
-        document.getElementById(id).style.backgroundImage = "url('../images/cloudysun.jpg')";
+        document.getElementById(id).style.backgroundImage = "url('images/cloudysun.jpg')";
         break;
       case "03d":
-        document.getElementById(id).style.backgroundImage = "url('../images/scatteredclouds.avif')";
+        document.getElementById(id).style.backgroundImage = "url('images/scatteredclouds.avif')";
         break;
       case "04d":
-        document.getElementById(id).style.backgroundImage = "url('../images/brokenclouds.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/brokenclouds.jpg')"
         break;
       case "09d":
-        document.getElementById(id).style.backgroundImage = "url('../images/showerrain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrain.jpg')"
         break;
       case "10d":
-        document.getElementById(id).style.backgroundImage = "url('../images/rain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url(images/rain.jpg')"
         break;
       case "11d":
-        document.getElementById(id).style.backgroundImage = "url('../images/thunderstorm.webp')"
+        document.getElementById(id).style.backgroundImage = "url('images/thunderstorm.webp')"
         break;
       case "13d":
-        document.getElementById(id).style.backgroundImage = "url('../images/snow.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/snow.jpg')"
         break;
       case "50d":
-        document.getElementById(id).style.backgroundImage = "url('../images/mist.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/mist.jpg')"
         break;
       case "01n":
-        document.getElementById(id).style.backgroundImage = "url('../images/clearskynight.webp')"
+        document.getElementById(id).style.backgroundImage = "url('images/clearskynight.webp')"
         break;
       case "02n":
-        document.getElementById(id).style.backgroundImage = "url('../images/fewcloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/fewcloudsnight.jpg')"
         break;
       case "03n":
-        document.getElementById(id).style.backgroundImage = "url('../images/scatteredcloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/scatteredcloudsnight.jpg')"
         break;
       case "04n":
-        document.getElementById(id).style.backgroundImage = "url('../images/brokencloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/brokencloudsnight.jpg')"
         break;
       case "09n":
-        document.getElementById(id).style.backgroundImage = "url('../images/showerrainnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')"
         break;
       case "10n":
-        document.getElementById(id).style.backgroundImage = "url('../images/showerrainnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')"
         break;
       case "11n":
-        document.getElementById(id).style.backgroundImage = "url('../images/thunderstormnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/thunderstormnight.jpg')"
         break;
       case "13n":
-        document.getElementById(id).style.backgroundImage = "url('../images/snownight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/snownight.jpg')"
         break;
       case "50n":
-        document.getElementById(id).style.backgroundImage = "url('../images/mistnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/mistnight.jpg')"
         break;
       default:
         document.getElementById(id).innerText = icon;
@@ -287,6 +292,7 @@ function rwandaCityWeather(cityRwanda) {
     document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
     iconSwitch("rwanda_icon", newWeather.weather[0].icon);
+    backgroundColorComparison(newWeather.main.temp,"rwanda_comparison");
   })
 }
 
@@ -295,10 +301,11 @@ function rwandaCityWeather(cityRwanda) {
 function swedenCityWeather(citySweden) {
   getCurrentWeatherData(citySweden).then(newWeather => {
     document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
-    document.getElementById("sweden_city_temperature").innerText = innerText = newWeather.main.temp;
+    document.getElementById("sweden_city_temperature").innerText = newWeather.main.temp;
     document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
     iconSwitch("sweden_icon", newWeather.weather[0].icon);
+    backgroundColorComparison(newWeather.main.temp,"sweden_comparison");
   })
 }
 
@@ -331,5 +338,36 @@ function convertUnixToDateTime(unixTime) {
   return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
 }
 
-
+function backgroundColorComparison(temperature, id){
+  if(temperature > 30){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #cc0000 0%, #990033 100%)";
+  }
+  else if(temperature > 25){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff5050 0%, #cc0000 100%)";
+  }
+  else if(temperature > 20){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff6600c2 0%, #ff0000ad 100%)";
+  }
+  else if(temperature > 15){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffcc99 0%, #ff9933 100%)";
+  }
+  else if(temperature > 10){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffffff 0%, #ffcc99 100%";
+  }
+  else if(temperature > 5){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #614545 100%)";
+  }
+  else if(temperature > 0){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #0066ff 0%, #66ccff 100%)";
+  }
+   else if(temperature > -5){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #454a61 100%)";
+  }
+  else if(temperature > -10){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #66ccffb0 0%, #ccccffd8 100%)";
+  }
+  else{
+    document.getElementById(`${id}`).style.background="red";
+  }
+}
 
