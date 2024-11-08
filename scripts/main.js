@@ -287,6 +287,7 @@ function rwandaCityWeather(cityRwanda) {
     document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
     iconSwitch("rwanda_icon", newWeather.weather[0].icon);
+    backgroundColorComparison(newWeather.main.temp,"rwanda_comparison");
   })
 }
 
@@ -295,10 +296,11 @@ function rwandaCityWeather(cityRwanda) {
 function swedenCityWeather(citySweden) {
   getCurrentWeatherData(citySweden).then(newWeather => {
     document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
-    document.getElementById("sweden_city_temperature").innerText = innerText = newWeather.main.temp;
+    document.getElementById("sweden_city_temperature").innerText = newWeather.main.temp;
     document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
     iconSwitch("sweden_icon", newWeather.weather[0].icon);
+    backgroundColorComparison(newWeather.main.temp,"sweden_comparison");
   })
 }
 
@@ -331,5 +333,36 @@ function convertUnixToDateTime(unixTime) {
   return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
 }
 
-
+function backgroundColorComparison(temperature, id){
+  if(temperature > 30){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #cc0000 0%, #990033 100%)";
+  }
+  else if(temperature > 25){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff5050 0%, #cc0000 100%)";
+  }
+  else if(temperature > 20){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff6600c2 0%, #ff0000ad 100%)";
+  }
+  else if(temperature > 15){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffcc99 0%, #ff9933 100%)";
+  }
+  else if(temperature > 10){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffffff 0%, #ffcc99 100%";
+  }
+  else if(temperature > 5){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #614545 100%)";
+  }
+  else if(temperature > 0){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #0066ff 0%, #66ccff 100%)";
+  }
+   else if(temperature > -5){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #454a61 100%)";
+  }
+  else if(temperature > -10){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #66ccffb0 0%, #ccccffd8 100%)";
+  }
+  else{
+    document.getElementById(`${id}`).style.background="red";
+  }
+}
 

@@ -53,8 +53,7 @@
     <section id="section-1">
       <h2>Compare Sweden to Rwanda</h2>
       <div class="section_1_container">
-        <div class="section_1_item">
-          <form action="#sweden_cities">
+        <div class="section_1_item" id="sweden_comparison">
             <label for="sweden_cities">Choose a city in Sweden</label>
             <br>
             <select id="sweden_cities">
@@ -62,20 +61,20 @@
               <option value="gothenburg">Gothenburg</option>
               <option value="malmö">Malmö</option>
             </select>
-            <input type="submit" value="Enter"
-              onclick="swedenCityWeather(sweden_cities.value)"><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
-          </form>
+            <button
+              onclick="swedenCityWeather(sweden_cities.value)">Enter</button><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
+        
           <h3>The weather here is:</h3>
           <div id="sweden_city_weather">--</div>
-          <div>The temperature is:<div id="sweden_city_temperature">--</div>°C</div>
+          <div>The temperature is:<div id="sweden_city_temperature">--</div></div>
           <div>The sun rises at:<div id="sweden_city_sunrise">--</div>
           </div>
           <div>The sun sets at:<div id="sweden_city_sunset">--</div>
           </div>
           <div id="sweden_icon">--</div>
         </div>
-        <div class="section_1_item">
-          <form action="#rwanda_cities">
+        <div class="section_1_item" id="rwanda_comparison">
+          
             <label for="rwanda_cities">Choose a city in Rwanda</label>
             <br>
             <select id="rwanda_cities">
@@ -83,11 +82,11 @@
               <option value="gisenyi">Gisenyi</option>
               <option value="ruhengeri">Ruhengeri</option>
             </select>
-            <input type="submit" value="Enter" onclick="rwandaCityWeather(rwanda_cities.value)">
-          </form>
+            <button onclick="rwandaCityWeather(rwanda_cities.value)">Enter</button>
+          
           <h3>The weather here is:</h3>
           <div id="rwanda_city_weather">--</div>
-          <div>The temperature is:<div id="rwanda_city_temperature">--</div>°C</div>
+          <div>The temperature is:<div id="rwanda_city_temperature">--</div></div>
           <div>The sun rises at:<div id="rwanda_city_sunrise">--</div>
           </div>
           <div>The sun sets at:<div id="rwanda_city_sunset">--</div>
