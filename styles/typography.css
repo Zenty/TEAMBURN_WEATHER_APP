@@ -51,9 +51,17 @@ h3 {
   padding-bottom: 20px;
 }
 
-h1 { font-size: 60px; }
-h2 { font-size: 44px; }
-h3 { font-size: 30px; }
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+h3 {
+  font-size: 30px;
+}
 
 /* Header */
 header nav ul li a {
@@ -79,9 +87,21 @@ header nav ul li::marker {
 }
 
 /* Main - Startpage */
-main section#frontpage h1 { color: white; text-shadow: 0px 4px 0px var(--secondary-heading-color); padding-bottom: 0; line-height: 50px; }
-main section#frontpage h2 { color: var(--team-burn); text-shadow: 3px -3px 0px var(--secondary-heading-color); }
-main section#frontpage h2 span { text-shadow: -3px -3px 0px var(--secondary-heading-color); }
+main section#frontpage h1 {
+  color: white;
+  text-shadow: 0px 4px 0px var(--secondary-heading-color);
+  padding-bottom: 0;
+  line-height: 50px;
+}
+
+main section#frontpage h2 {
+  color: var(--team-burn);
+  text-shadow: 3px -3px 0px var(--secondary-heading-color);
+}
+
+main section#frontpage h2 span {
+  text-shadow: -3px -3px 0px var(--secondary-heading-color);
+}
 
 /* Main - Section 1 */
 /* Main - Section 2 */
