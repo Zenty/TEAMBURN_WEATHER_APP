@@ -2,6 +2,13 @@
 /*    Media Queries    */
 /* ******************* */
 
+/* Special Case */
+@media (max-width: 1300px) {
+  main section#section-1 .section_1_container { flex-wrap: wrap; }
+  main section#section-1 .section_1_container .section_1_item { margin: 0; }
+  main section#section-1 .section_1_container .section_1_item#sweden_comparison { order: 2; }
+  main section#section-1 .section_1_container .section_1_item#rwanda_comparison { order: 1; margin-bottom: 30px; }
+}
 
 /* Medium to Large Devices */
 @media (min-width: 1025px) {
@@ -23,10 +30,28 @@
   header nav ul li.active { list-style-type: none; }
   header nav ul li.active a { text-decoration: underline; }
   /* Sections */
-  main section, footer { padding: 25px; }
+  main section { padding: 25px; }
   main section .frontpage-container { padding: 25px; }
   main section .frontpage-container h1 { line-height: 50px; }
 
+  /* Section 1 */
+  main section#section-1 .section_1_container { flex-wrap: wrap; }
+  main section#section-1 .section_1_container .section_1_item { margin: 0; }
+  main section#section-1 .section_1_container .section_1_item#sweden_comparison { order: 2; }
+  main section#section-1 .section_1_container .section_1_item#rwanda_comparison { order: 1; margin-bottom: 30px; }
+
+  /* Section 2 */
+  main section#section-2 form { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 15px; }
+  main section#section-2 input, main section#section-2 button { width: 200px; }
+  main section#section-2 input { margin-right: 0; }
+
   /* Section 4 */
   main section#section-4 .section_4_item { min-width: 230px; }
+
+  /* Footer */
+  footer { padding: 25px; padding-top: 25px; }
+  footer .footer_container { flex-direction: column; align-items: flex-start; }
+  footer .footer_container .theme_switch { margin-top: 25px; flex-wrap: wrap; }
+  footer .footer_container .theme_switch span#theme { order: 2; margin-right: 0; margin-left: 10px; }
+  footer .footer_container .theme_switch .switch { order: 1; }
 }
