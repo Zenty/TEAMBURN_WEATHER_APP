@@ -446,6 +446,8 @@ footer {
   width: 100%;
   min-height: 200px;
   padding: 50px;
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
 .footer_container {
