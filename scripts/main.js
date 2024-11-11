@@ -146,6 +146,7 @@ function getForecastData(cityname) {
           document.getElementsByClassName("section_4_container")[0].style.display = "flex";
           document.getElementsByClassName("section_3_nocity")[0].style.display = "none";
           document.getElementsByClassName("section_3_container")[0].style.display = "flex";
+          document.getElementsByClassName("section_3_wrapper")[0].style.background = "var(--secondary-background-gradient)";
           document.getElementById(`item_${i + 1}_city`).innerText = cityname;
           document.getElementById(`item_${i + 1}_date`).innerText = forecastData.list[i].dt_txt;
           document.getElementById(`item_${i + 1}_weather`).innerText = forecastData.list[i].weather[0].main;
