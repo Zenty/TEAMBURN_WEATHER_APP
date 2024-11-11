@@ -250,6 +250,9 @@ main section#section-2 button {
 main section#section-3 {
   background-color: var(--background-section);
   min-height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: none;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
@@ -293,6 +296,19 @@ main section#section-3 .section_3_nocity {
   width: 100%;
   max-width: 200px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--background-section)
+}
+
+.section_3_temp_number{
+
+}
+
+.section_3_descriptive_text{
+  font-weight: bold;
+}
+
+.section_3_date{
+  font-style: italic;
 }
 
 /* Section 4 */
@@ -384,7 +400,6 @@ main section#section-4 .section_4_nocity {
   bottom: 0;
   left: 0;
 }
-
 
 /* ************ */
 /*    Footer    */
@@ -484,3 +499,4 @@ input:checked+.slider:before {
   opacity: 1;
   visibility: visible;
 }
+

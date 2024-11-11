@@ -257,6 +257,7 @@ function chosenCityWeather(cityname) {
     document.getElementById("chosen_city_max_temperature").innerText = newWeather.main.temp_max + " C°";
     document.getElementById("chosen_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("chosen_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
+    document.getElementById("chosen_city_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
     forecastBackgroundSwitch("section-3", newWeather.weather[0].icon)
   })
     ;
