@@ -150,74 +150,11 @@ function getForecastData(cityname) {
           document.getElementById(`item_${i + 1}_date`).innerText = forecastData.list[i].dt_txt;
           document.getElementById(`item_${i + 1}_weather`).innerText = forecastData.list[i].weather[0].main;
           document.getElementById(`item_${i + 1}_temperature`).innerText = Math.round(forecastData.list[i].main.temp) + "°";
-          iconSwitch(`item_${i + 1}_icon`, forecastData.list[i].weather[0].icon);
+          document.getElementById(`item_${i + 1}_icon`).innerHTML = `<img src=\"https://openweathermap.org/img/wn/${forecastData.list[i].weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
           forecastBackgroundSwitch(`section_4_item_${i + 1}`, forecastData.list[i].weather[0].icon);
         }
     })
     .catch(error => console.error("error fetching forecast data:", error));
-}
-
-//function that takes id of the element we want to print the icon to aswell as loads the icon from the weatherobject.
-function iconSwitch(id, icon) {
-  switch (icon) {
-    case "01d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/01d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "02d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/02d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "03d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/03d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "04d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/04d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "09d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/09d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "10d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/10d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "11d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/11d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "13d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/13d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "50d":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/50d@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "01n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/01n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "02n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/02n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "03n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/03n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "04n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/04n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "09n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/09n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "10n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/10n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "11n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/11n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "13n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/13n@2x.png\" alt=\"sunny icon\">";
-      break;
-    case "50n":
-      document.getElementById(id).innerHTML = "<img src=\"https://openweathermap.org/img/wn/50n@2x.png\" alt=\"sunny icon\">";
-      break;
-    default:
-      document.getElementById(id).innerText = icon;
-      break;
-  }
 }
 
 function forecastBackgroundSwitch(id, icontxt){
@@ -291,7 +228,7 @@ function rwandaCityWeather(cityRwanda) {
     document.getElementById("rwanda_city_temperature").innerText = innerText = newWeather.main.temp;
     document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
-    iconSwitch("rwanda_icon", newWeather.weather[0].icon);
+    document.getElementById("rwanda_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
     backgroundColorComparison(newWeather.main.temp,"rwanda_comparison");
   })
 }
@@ -304,11 +241,10 @@ function swedenCityWeather(citySweden) {
     document.getElementById("sweden_city_temperature").innerText = newWeather.main.temp;
     document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
-    iconSwitch("sweden_icon", newWeather.weather[0].icon);
+    document.getElementById("sweden_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
     backgroundColorComparison(newWeather.main.temp,"sweden_comparison");
   })
 }
-
 
 //function to set the data in free-search part of the weather app, in section 3. Creates a weatherobject throug the getCurrentWeatherData-method and 
 //then sets the data to correct id's
@@ -321,6 +257,7 @@ function chosenCityWeather(cityname) {
     document.getElementById("chosen_city_max_temperature").innerText = newWeather.main.temp_max + " C°";
     document.getElementById("chosen_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("chosen_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
+    forecastBackgroundSwitch("section-3", newWeather.weather[0].icon)
   })
     ;
 }
@@ -382,7 +319,6 @@ function getLocation() {
   }
 }
 
-
   function showPosition(position) {
     fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=1&appid=df4c0154d893ba9c3ae1e611a27a169b`)
     .then(response => response.json())
@@ -401,4 +337,3 @@ function getLocation() {
   }
 
   startScript();
-
