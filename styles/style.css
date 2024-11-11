@@ -277,9 +277,8 @@ main section#section-2 button:hover {
 main section#section-3 {
   background-color: var(--background-section);
   min-height: 500px;
-  width: 100%;
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
   padding: 30px;
   display: flex;
   flex-direction: column;
