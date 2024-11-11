@@ -277,32 +277,32 @@ function convertUnixToDateTime(unixTime) {
 }
 
 function backgroundColorComparison(temperature, id){
-  if(temperature > 30){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #cc0000 0%, #990033 100%)";
+  if(temperature >= 30){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #f56161 0%, #a00101 100%)";
   }
-  else if(temperature > 25){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff5050 0%, #cc0000 100%)";
+  else if(temperature >= 25){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff7350 0%, #cc0000 100%)";
   }
-  else if(temperature > 20){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff6600c2 0%, #ff0000ad 100%)";
+  else if(temperature >= 20){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ff6600c2 0%, #ff0000bd 100%)";
   }
-  else if(temperature > 15){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffcc99 0%, #ff9933 100%)";
+  else if(temperature >= 15){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #f0aa64 0%, #fa7922 100%)";
   }
-  else if(temperature > 10){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffffff 0%, #ffcc99 100%";
+  else if(temperature >= 10){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ffd19d 0%, #b87658 100%)";
   }
-  else if(temperature > 5){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #614545 100%)";
+  else if(temperature >= 5){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #f5dbbe 0%, #c49783 100%)";
   }
-  else if(temperature > 0){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #0066ff 0%, #66ccff 100%)";
+  else if(temperature >= 0){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #818ab3 100%) ";
   }
-   else if(temperature > -5){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #ccbdbd 0%, #454a61 100%)";
+   else if(temperature >= -5){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #5594f1 0%, #90cdec 100%)";
   }
-  else if(temperature > -10){
-    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #66ccffb0 0%, #ccccffd8 100%)";
+  else if(temperature >= -10){
+    document.getElementById(`${id}`).style.background = "linear-gradient(to bottom, #0066ff 0%, #3db9f7 100%)";
   }
   else{
     document.getElementById(`${id}`).style.background="red";
