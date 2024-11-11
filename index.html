@@ -100,9 +100,10 @@
     <!-- Section 2 -->
     <section id="section-2">
       <h2>Enter a city here to check the weather:</h2>
-      <input type="text" value="" id="cityname" placeholder="Name of the city">
-      <br>
-      <button onclick="chosenCityWeather(cityname.value); getForecastData(cityname.value)">Enter City</button>
+      <form onsubmit="return false">
+        <input type="text" value="" id="cityname" placeholder="Name of the city">
+        <button onclick="chosenCityWeather(cityname.value); getForecastData(cityname.value)">ENTER CITY</button>
+      </form>
     </section>
     <!-- Section 3 -->
     <section id="section-3">
@@ -303,11 +304,11 @@
 
       <!-- Theme toggle switch and text can stay outside this container -->
       <div class="theme_switch">
+        <span id="theme">Current theme: Warm</span>
         <label class="switch">
           <input type="checkbox" id="theme-toggle">
           <span class="slider" id="slider-text"></span>
         </label>
-        <span id="theme">Current theme: Warm</span>
       </div>
     </div>
   </footer>
