@@ -224,7 +224,7 @@ function forecastBackgroundSwitch(id, icontxt){
 function rwandaCityWeather(cityRwanda) {
 
   getCurrentWeatherData(cityRwanda).then(newWeather => {
-    document.getElementById("rwanda_city_weather").innerText = newWeather.weather[0].description;
+    document.getElementById("rwanda_city_weather").innerText = capitalize(newWeather.weather[0].description);
     document.getElementById("rwanda_city_temperature").innerText = innerText = newWeather.main.temp;
     document.getElementById("rwanda_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("rwanda_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
@@ -237,7 +237,7 @@ function rwandaCityWeather(cityRwanda) {
 //then sets the data to correct id's
 function swedenCityWeather(citySweden) {
   getCurrentWeatherData(citySweden).then(newWeather => {
-    document.getElementById("sweden_city_weather").innerText = newWeather.weather[0].description;
+    document.getElementById("sweden_city_weather").innerText = capitalize(newWeather.weather[0].description);
     document.getElementById("sweden_city_temperature").innerText = newWeather.main.temp;
     document.getElementById("sweden_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("sweden_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
@@ -250,7 +250,7 @@ function swedenCityWeather(citySweden) {
 //then sets the data to correct id's
 function chosenCityWeather(cityname) {
   getCurrentWeatherData(cityname).then(newWeather => {
-    document.getElementById("chosen_city_weather").innerText = newWeather.weather[0].description;
+    document.getElementById("chosen_city_weather").innerText = capitalize(newWeather.weather[0].description);
     document.getElementById("chosen_city_temperature").innerText = newWeather.main.temp + " C°";
     document.getElementById("chosen_city_temperature_feels_like").innerText = newWeather.main.feels_like + " C°";
     document.getElementById("chosen_city_min_temperature").innerText = newWeather.main.temp_min + " C°";
@@ -335,6 +335,10 @@ function getLocation() {
     let startingValueRwanda = document.getElementById("rwanda_cities").value;
     swedenCityWeather(startingValueSweden);
     rwandaCityWeather(startingValueRwanda);
+  }
+
+  function capitalize(string){
+    return string[0].toUpperCase() + string.slice(1);
   }
 
   startScript();
