@@ -329,7 +329,7 @@ main section#section-3 .section_3_nocity {
 .section_3_item {
   background-color: var(--background-section-item) !important;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   text-align: center;
   width: 100%;
   max-width: 200px;

@@ -21,7 +21,7 @@
   --secondary-heading-color: rgb(199, 56, 0);
   --secondary-background-gradient: linear-gradient(75deg, #c58d4dc5 0%, #c2652fb2 50%, #5300008f 100%);
   --background: linear-gradient(to right, #cc6600 0%, #ff330093 50%, #8000008f 100%);
-  --background-section: rgb(231 218 207);
+  --background-section: rgba(248, 216, 190, 0.651);
   --background-section-item: rgba(231, 218, 207, 0.7);
   --heading-color: #ffba00;
   --border-radius: 25px;
