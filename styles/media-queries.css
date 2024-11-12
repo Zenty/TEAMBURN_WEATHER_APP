@@ -55,3 +55,10 @@
   footer .footer_container .theme_switch span#theme { order: 2; margin-right: 0; margin-left: 10px; }
   footer .footer_container .theme_switch .switch { order: 1; }
 }
+
+@media (max-width: 1024px) {
+  .switch:hover .slider::after {
+    opacity: 0; 
+    visibility: hidden;
+  }
+}
