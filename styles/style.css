@@ -276,7 +276,7 @@ main section#section-2 button:hover {
 /* Section 3 */
 main section#section-3 {
   background-color: var(--background-section);
-  min-height: 500px;
+  min-height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
@@ -294,6 +294,7 @@ main section#section-3 .section_3_wrapper {
   justify-content: center;
   padding: 30px;
   width: 100%;
+  min-height: 700px;
   border-radius: var(--border-radius);
 }
 
