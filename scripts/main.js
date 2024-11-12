@@ -133,6 +133,7 @@ function getCurrentWeatherData(cityname) {
         weatherData.cod,
       )
     })
+    .catch(error => console.error("error fetching weather data:", error));
 }
 
 //function that fetches data from forecast API and places it in the corresponding boxes in section 4, uses the same input as chosenCityWeather-function
@@ -232,6 +233,7 @@ function rwandaCityWeather(cityRwanda) {
     document.getElementById("rwanda_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
     backgroundColorComparison(newWeather.main.temp,"rwanda_comparison");
   })
+  .catch(error => console.error("error fetching weather data:", error));
 }
 
 //function to set the weather in the sweden-part of the comparison. Creates a weatherobject throug the getCurrentWeatherData-method and 
@@ -245,12 +247,14 @@ function swedenCityWeather(citySweden) {
     document.getElementById("sweden_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
     backgroundColorComparison(newWeather.main.temp,"sweden_comparison");
   })
+  .catch(error => console.error("error fetching weather data:", error));
 }
 
 //function to set the data in free-search part of the weather app, in section 3. Creates a weatherobject throug the getCurrentWeatherData-method and 
 //then sets the data to correct id's
 function chosenCityWeather(cityname) {
   getCurrentWeatherData(cityname).then(newWeather => {
+    document.getElementById("chosen_city_name").innerText = capitalize(cityname);
     document.getElementById("chosen_city_weather").innerText = capitalize(newWeather.weather[0].description);
     document.getElementById("chosen_city_temperature").innerText = newWeather.main.temp + " C°";
     document.getElementById("chosen_city_temperature_feels_like").innerText = newWeather.main.feels_like + " C°";
@@ -261,7 +265,7 @@ function chosenCityWeather(cityname) {
     document.getElementById("chosen_city_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
     forecastBackgroundSwitch("section-3", newWeather.weather[0].icon)
   })
-    ;
+  .catch(error => console.error("error fetching weather data:", error));
 }
 
 //functiont that converts unix to datetime for increased readability
@@ -317,7 +321,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    console.log("Geolocation is not supported by this browser.");
   }
 }
 
@@ -328,6 +332,7 @@ function getLocation() {
       chosenCityWeather(currentCity[0].name);
       getForecastData(currentCity[0].name); 
     })
+    .catch(error => console.error("error fetching weather data:", error));
   }
 
   function startScript(){
