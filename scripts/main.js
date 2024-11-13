@@ -98,6 +98,40 @@ forecast = {
   },
   dt_txt: "2024-11-07 09:00:00"
 }
+function saveSearch(city) {
+  console.log("Sparar sökning för:", city); // Kontrollera vilken stad som sparas
+  let searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  
+  // Lägg till den nya sökningen i början av listan
+  searches.unshift(city);
+
+  // Begränsa till de senaste 5 sökningarna
+  if (searches.length > 5) searches = searches.slice(0, 5);
+  localStorage.setItem('recentSearches', JSON.stringify(searches));
+  console.log("Senaste sökningar:", searches); // Kontrollera de sparade sökningarna
+}
+function loadRecentSearches() {
+  console.log("Laddar senaste sökningar..."); // Felsökningsmeddelande
+  const searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  const recentSearchesContainer = document.getElementById('recent-searches');
+
+  // Kontrollera om elementet finns
+  if (!recentSearchesContainer) {
+    console.error("Elementet #recent-searches saknas i HTML-koden");
+    return;
+  }
+
+  recentSearchesContainer.innerHTML = ''; // Rensa tidigare innehåll
+  searches.forEach(city => {
+    console.log("Lägger till sökning:", city); // Kontrollera varje sökning som läggs till
+    const searchItem = document.createElement('div');
+    searchItem.className = 'search-item';
+    searchItem.innerText = city;
+    searchItem.onclick = () => chosenCityWeather(city);
+    recentSearchesContainer.appendChild(searchItem);
+  });
+}
+
 
 //constructor to create a weatherobject
 function Forecast(Dt, Main, Weather, Clouds, Wind, Visibility, Pop, Sys, Dt_txt) {
@@ -176,7 +210,7 @@ function forecastBackgroundSwitch(id, icontxt){
         document.getElementById(id).style.backgroundImage = "url('images/showerrain.jpg')"
         break;
       case "10d":
-        document.getElementById(id).style.backgroundImage = "url(images/rain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url(images/rain.jpg')";
         break;
       case "11d":
         document.getElementById(id).style.backgroundImage = "url('images/thunderstorm.webp')"
@@ -250,7 +284,17 @@ function swedenCityWeather(citySweden) {
 //function to set the data in free-search part of the weather app, in section 3. Creates a weatherobject throug the getCurrentWeatherData-method and 
 //then sets the data to correct id's
 function chosenCityWeather(cityname) {
+  console.log("Visar väder för:", cityname); // Kontrollera vilken stad som visas
+  saveSearch(cityname); // Spara den nya sökningen
+  loadRecentSearches(); // Uppdatera listan med senaste sökningar
+
+  // Hämtar väderdata för den valda staden
   getCurrentWeatherData(cityname).then(newWeather => {
+    if (!newWeather || !newWeather.weather || !newWeather.weather[0]) {
+      console.error("Misslyckades med att hämta väderdata för:", cityname);
+      return;
+    }
+
     document.getElementById("chosen_city_weather").innerText = capitalize(newWeather.weather[0].description);
     document.getElementById("chosen_city_temperature").innerText = newWeather.main.temp + " C°";
     document.getElementById("chosen_city_temperature_feels_like").innerText = newWeather.main.feels_like + " C°";
@@ -259,10 +303,12 @@ function chosenCityWeather(cityname) {
     document.getElementById("chosen_city_sunrise").innerText = convertUnixToDateTime(newWeather.sys.sunrise);
     document.getElementById("chosen_city_sunset").innerText = convertUnixToDateTime(newWeather.sys.sunset);
     document.getElementById("chosen_city_icon").innerHTML = `<img src=\"https://openweathermap.org/img/wn/${newWeather.weather[0].icon}@2x.png\" alt=\"sunny icon\">`;
-    forecastBackgroundSwitch("section-3", newWeather.weather[0].icon)
-  })
-    ;
+    forecastBackgroundSwitch("section-3", newWeather.weather[0].icon);
+  }).catch(error => console.error("Fel vid hämtning av väderdata:", error));
 }
+
+  
+
 
 //functiont that converts unix to datetime for increased readability
 function convertUnixToDateTime(unixTime) {
@@ -343,3 +389,8 @@ function getLocation() {
   }
 
   startScript();
+
+  document.addEventListener('DOMContentLoaded', loadRecentSearches);
+
+  
+  
