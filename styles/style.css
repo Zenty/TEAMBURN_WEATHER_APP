@@ -280,7 +280,7 @@ main section#section-2 h3 {
 }
 
 #recent-searches {
-  border-radius: var(--border-radius, 10px); /* Se till att --border-radius är definierad */
+  border-radius: var(--border-radius, 10px); /* Make sure --border-radius is defined */
   width: 100%;
   color: var(--text, #333);
   display: flex;

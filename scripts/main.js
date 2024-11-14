@@ -171,49 +171,49 @@ function forecastBackgroundSwitch(id, icontxt){
         document.getElementById(id).style.backgroundImage = "url('images/scatteredclouds.avif')";
         break;
       case "04d":
-        document.getElementById(id).style.backgroundImage = "url('images/brokenclouds.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/brokenclouds.jpg')";
         break;
       case "09d":
-        document.getElementById(id).style.backgroundImage = "url('images/showerrain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrain.jpg')";
         break;
       case "10d":
-        document.getElementById(id).style.backgroundImage = "url('images/rain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/rain.jpg')";
         break;
       case "11d":
-        document.getElementById(id).style.backgroundImage = "url('images/thunderstorm.webp')"
+        document.getElementById(id).style.backgroundImage = "url('images/thunderstorm.webp')";
         break;
       case "13d":
-        document.getElementById(id).style.backgroundImage = "url('images/snow.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/snow.jpg')";
         break;
       case "50d":
-        document.getElementById(id).style.backgroundImage = "url('images/mist.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/mist.jpg')";
         break;
       case "01n":
-        document.getElementById(id).style.backgroundImage = "url('images/clearskynight.webp')"
+        document.getElementById(id).style.backgroundImage = "url('images/clearskynight.webp')";
         break;
       case "02n":
-        document.getElementById(id).style.backgroundImage = "url('images/fewcloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/fewcloudsnight.jpg')";
         break;
       case "03n":
-        document.getElementById(id).style.backgroundImage = "url('images/scatteredcloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/scatteredcloudsnight.jpg')";
         break;
       case "04n":
-        document.getElementById(id).style.backgroundImage = "url('images/brokencloudsnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/brokencloudsnight.jpg')";
         break;
       case "09n":
-        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')";
         break;
       case "10n":
-        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/showerrainnight.jpg')";
         break;
       case "11n":
-        document.getElementById(id).style.backgroundImage = "url('images/thunderstormnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/thunderstormnight.jpg')";
         break;
       case "13n":
-        document.getElementById(id).style.backgroundImage = "url('images/snownight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/snownight.jpg')";
         break;
       case "50n":
-        document.getElementById(id).style.backgroundImage = "url('images/mistnight.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/mistnight.jpg')";
         break;
       default:
         document.getElementById(id).innerText = icon;

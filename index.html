@@ -62,8 +62,7 @@
             <option value="gothenburg">Gothenburg</option>
             <option value="malmö">Malmö</option>
           </select>
-          <button
-            onclick="swedenCityWeather(sweden_cities.value)">Enter</button><!-- <button onclick="swedenCityWeather(sweden_cities.value)">Testbutton</button> -->
+          <button onclick="swedenCityWeather(sweden_cities.value)">Enter</button>
 
           <h3>The weather here is:</h3>
           <div id="sweden_city_weather">--</div>
@@ -117,17 +116,18 @@
     <!-- Section 3 -->
     <section id="section-3">
       <div class="section_3_wrapper">
-      <h2>The weather for <span id="chosen_city_name">(unknown city)</span> is:</h2>
-      <h3 class="section_3_nocity">No city to showcase the weather from has been selected yet...</h3>
-      <div class="section_3_container">
-        <div class="section_3_item">
-          <div id="chosen_city_weather" class="section_3_descriptive_text">--</div>
-          <div id="chosen_city_icon">--</div>
-        </div>
-        <div class="section_3_item">
-          <div><span class="section_3_descriptive_text">The current temperature is:</span><div id="chosen_city_temperature" class="section_3_temp_number">--</div>
+        <h2>The weather for <span id="chosen_city_name">(unknown city)</span> is:</h2>
+        <h3 class="section_3_nocity">No city to showcase the weather from has been selected yet...</h3>
+        <div class="section_3_container">
+          <div class="section_3_item">
+            <div id="chosen_city_weather" class="section_3_descriptive_text">--</div>
+            <div id="chosen_city_icon">--</div>
           </div>
-        </div>
+          <div class="section_3_item">
+            <div><span class="section_3_descriptive_text">The current temperature is:</span>
+              <div id="chosen_city_temperature" class="section_3_temp_number">--</div>
+            </div>
+          </div>
           <div class="section_3_item">
             <div><span class="section_3_descriptive_text">The temperature feels like:</span>
               <div id="chosen_city_temperature_feels_like" class="section_3_temp_number">--</div>
@@ -151,7 +151,7 @@
               <div id="chosen_city_sunset" class="section_3_date">--</div>
             </div>
           </div>
-      </div>
+        </div>
     </section>
 
     <!-- Section 4 -->
