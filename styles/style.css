@@ -273,6 +273,39 @@ main section#section-2 button:hover {
   opacity: 0.7;
 }
 
+#recent-searches {
+  background-color: var(--background-section, #e8f4ff); /* Fallback om --background-section saknas */
+  border-radius: var(--border-radius, 10px); /* Se till att --border-radius är definierad */
+  color: var(--text, #333);
+}
+
+.search-item {
+  background-color: var(--background-section-item, #cce0ff);
+  color: var(--text, #333);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+#recent-searches h3 {
+  font-size: 20px;
+  color: var(--team-burn);
+  margin-bottom: 10px;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+
+
+
+.search-item:hover {
+  background-color: var(--team-burn);
+  color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.search-item:active {
+  transform: scale(0.98);
+}
+
+
 /* Section 3 */
 main section#section-3 {
   background-color: var(--background-section);
