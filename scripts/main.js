@@ -177,7 +177,7 @@ function forecastBackgroundSwitch(id, icontxt){
         document.getElementById(id).style.backgroundImage = "url('images/showerrain.jpg')"
         break;
       case "10d":
-        document.getElementById(id).style.backgroundImage = "url(images/rain.jpg')"
+        document.getElementById(id).style.backgroundImage = "url('images/rain.jpg')"
         break;
       case "11d":
         document.getElementById(id).style.backgroundImage = "url('images/thunderstorm.webp')"
