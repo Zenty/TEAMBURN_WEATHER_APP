@@ -273,7 +273,7 @@ main section#section-2 button:hover {
   opacity: 0.7;
 }
 
-#recent-searches {
+ #recent-searches {
   background-color: var(--background-section, #e8f4ff); /* Fallback om --background-section saknas */
   border-radius: var(--border-radius, 10px); /* Se till att --border-radius är definierad */
   color: var(--text, #333);
@@ -303,7 +303,7 @@ main section#section-2 button:hover {
 
 .search-item:active {
   transform: scale(0.98);
-}
+} 
 
 
 /* Section 3 */
