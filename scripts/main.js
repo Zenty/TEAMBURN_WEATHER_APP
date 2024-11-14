@@ -98,40 +98,6 @@ forecast = {
   },
   dt_txt: "2024-11-07 09:00:00"
 }
-function saveSearch(city) {
-  console.log("Sparar sökning för:", city); // Kontrollera vilken stad som sparas
-  let searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
-  
-  // Lägg till den nya sökningen i början av listan
-  searches.unshift(city);
-
-  // Begränsa till de senaste 5 sökningarna
-  if (searches.length > 5) searches = searches.slice(0, 5);
-  localStorage.setItem('recentSearches', JSON.stringify(searches));
-  console.log("Senaste sökningar:", searches); // Kontrollera de sparade sökningarna
-}
-function loadRecentSearches() {
-  console.log("Laddar senaste sökningar..."); // Felsökningsmeddelande
-  const searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
-  const recentSearchesContainer = document.getElementById('recent-searches');
-
-  // Kontrollera om elementet finns
-  if (!recentSearchesContainer) {
-    console.error("Elementet #recent-searches saknas i HTML-koden");
-    return;
-  }
-
-  recentSearchesContainer.innerHTML = ''; // Rensa tidigare innehåll
-  searches.forEach(city => {
-    console.log("Lägger till sökning:", city); // Kontrollera varje sökning som läggs till
-    const searchItem = document.createElement('div');
-    searchItem.className = 'search-item';
-    searchItem.innerText = city;
-    searchItem.onclick = () => chosenCityWeather(city);
-    recentSearchesContainer.appendChild(searchItem);
-  });
-}
-
 
 //constructor to create a weatherobject
 function Forecast(Dt, Main, Weather, Clouds, Wind, Visibility, Pop, Sys, Dt_txt) {
@@ -287,11 +253,10 @@ function swedenCityWeather(citySweden) {
 //function to set the data in free-search part of the weather app, in section 3. Creates a weatherobject throug the getCurrentWeatherData-method and 
 //then sets the data to correct id's
 function chosenCityWeather(cityname) {
-  console.log("Visar väder för:", cityname); // Kontrollera vilken stad som visas
-  saveSearch(cityname); // Spara den nya sökningen
-  loadRecentSearches(); // Uppdatera listan med senaste sökningar
+  saveSearch(cityname); // Save new search
+  loadRecentSearches(); // Update list with searches
 
-  // Hämtar väderdata för den valda staden
+  // Get weatherdata for the chosen city
   getCurrentWeatherData(cityname).then(newWeather => {
     document.getElementById("chosen_city_name").innerText = capitalize(cityname);
     document.getElementById("chosen_city_weather").innerText = capitalize(newWeather.weather[0].description);
@@ -307,10 +272,8 @@ function chosenCityWeather(cityname) {
   .catch(error => console.error("error fetching weather data:", error));
 }
 
-  
 
-
-//functiont that converts unix to datetime for increased readability
+//function that converts unix to datetime for increased readability
 function convertUnixToDateTime(unixTime) {
   const dateObject = new Date(unixTime * 1000);
   const year = dateObject.getFullYear();
@@ -354,6 +317,36 @@ function backgroundColorComparison(temperature, id){
   else{
     document.getElementById(`${id}`).style.background="red";
   }
+}
+
+function saveSearch(city) {
+  let searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  // Add the new search to the beginning of the list
+  searches.unshift(city);
+  // Limit the list to the last 5 searches
+  if (searches.length > 5) searches = searches.slice(0, 5);
+  localStorage.setItem('recentSearches', JSON.stringify(searches));
+}
+
+function loadRecentSearches() {
+  const searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  const recentSearchesContainer = document.getElementById('recent-searches');
+
+  // Check that the element exists
+  if (!recentSearchesContainer) {
+    console.error("Elementet #recent-searches saknas i HTML-koden");
+    return;
+  }
+
+  recentSearchesContainer.innerHTML = ''; // Clear earlier searches
+  searches.forEach(city => {
+    const searchItem = document.createElement('div');
+    searchItem.className = 'search-item';
+    searchItem.innerText = city;
+    searchItem.onclick = () => chosenCityWeather(city);
+    getForecastData(city); 
+    recentSearchesContainer.appendChild(searchItem);
+  });
 }
 
 let currentLatitude = "";
